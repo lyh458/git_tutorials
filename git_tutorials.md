@@ -82,6 +82,10 @@ Rename branch
 ```
 git branch -m [old_branch_name] [new_branch_name]
 ```
+### 添加上游仓库 ``git remote``
+```
+git remote add <name> <url>
+```
 
 ### 版本恢复命令 ``git reset``
 不小心git add了不希望add的文件，可以使用git reset撤回。具体见针对场景的教程
@@ -298,7 +302,6 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/lyh458/ConExt.git
 git push -u origin master
-
 ```
 ### push现有的仓库到自己的github
 ```
