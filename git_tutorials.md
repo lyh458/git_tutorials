@@ -248,6 +248,34 @@ git push origin master
 - 在网页端新建一个同名的空白仓库
 - 然后再``git push -u origin``
 
+### 从远程的分支获取最新的版本到有这样2个命令
+
+- git fetch：相当于是从远程获取最新版本到本地，不会自动merge
+```   
+git fetch origin master
+git log -p master..origin/master
+git merge origin/master
+```
+以上命令的含义：
+   首先从远程的origin的master主分支下载最新的版本到origin/master分支上
+   然后比较本地的master分支和origin/master分支的差别
+   最后进行合并
+
+上述过程其实可以用以下更清晰的方式来进行：
+ 
+```  
+git fetch origin master:tmp
+git diff tmp 
+git merge tmp
+```
+
+从远程获取最新的版本到本地的test分支上之后再进行比较合并
+
+- git pull：相当于是从远程获取最新版本并merge到本地
+``` 
+git pull origin master
+```
+上述命令其实相当于git fetch 和 git merge在实际使用中，git fetch更安全一些 因为在merge前，我们可以查看更新情况，然后再决定是否合并.
 
 ### github上fork过来的项目，如何与原仓库保持同步
 #### 1. 在github网页端直接pull request
@@ -308,34 +336,6 @@ git push -u origin master
 git remote add origin https://github.com/lyh458/ConExt.git
 git push -u origin master
 ```
-### 从远程的分支获取最新的版本到本地有这样2个命令
-
-- git fetch：相当于是从远程获取最新版本到本地，不会自动merge
-```   
-git fetch origin master
-git log -p master..origin/master
-git merge origin/master
-```
-以上命令的含义：
-   首先从远程的origin的master主分支下载最新的版本到origin/master分支上
-   然后比较本地的master分支和origin/master分支的差别
-   最后进行合并
-
-上述过程其实可以用以下更清晰的方式来进行：
- 
-```  
-git fetch origin master:tmp
-git diff tmp 
-git merge tmp
-```
-
-从远程获取最新的版本到本地的test分支上之后再进行比较合并
-
-- git pull：相当于是从远程获取最新版本并merge到本地
-``` 
-git pull origin master
-```
-上述命令其实相当于git fetch 和 git merge在实际使用中，git fetch更安全一些 因为在merge前，我们可以查看更新情况，然后再决定是否合并.
 
 ### 如何删除已经提交到远程仓库的commit
 
@@ -353,6 +353,9 @@ git reset --hard <commit_id>
 ```git
 git push origin HEAD --force
 ```
+
+### 只pull request部分commit
+pull request可以指定分支,你自己的代码可以创建一个分支,需要pull request的代码直接放到master分支
 
 ### 版本恢复的各种场景
 不小心``git add``了不希望add的文件，可以使用``git reset``撤回
