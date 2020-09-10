@@ -87,6 +87,9 @@ git branch -m [old_branch_name] [new_branch_name]
 git remote add <name> <url>
 ```
 
+### 选择部分commit ``git cherry-pick``
+[git cherry-pick 教程s](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
+
 ### 版本恢复命令 ``git reset``
 不小心git add了不希望add的文件，可以使用git reset撤回。具体见针对场景的教程
 
@@ -355,7 +358,43 @@ git push origin HEAD --force
 ```
 
 ### 只pull request部分commit
-pull request可以指定分支,你自己的代码可以创建一个分支,需要pull request的代码直接放到master分支
+pull request可以指定分支,你自己的代码可以创建一个分支(以dev分支为例),需要pull request的代码直接放到master分支或其他分支（以master分支为例）。具体地是利用``git cherry-pick``实现：
+
+- 目标：将dev分支的commit1和commit2提交到上游仓库
+  
+- 在dev分之下，查看commit1的hash值，然后复制commit1和commit2的hash值(或分支名)
+```
+git log
+```
+
+- 切换到master分支
+```
+git checkout master
+```
+
+- 选择commit1和commit2
+```
+git cherry-pich <commit1_hash> <commit2_hash>
+```
+可能会出现conflict，[解决方法](https://blog.csdn.net/armwind/article/details/51746027)
+
+- push到自己的远端仓库
+```
+git push origin master
+```
+
+- 然后在网页端提交PR
+
+上面的命令将 A 和 B 两个提交应用到当前分支。这会在当前分支生成两个对应的新提交。
+如果想要转移一系列的连续提交，可以使用下面的简便语法。
+```
+git cherry-pick A..B 
+```
+上面的命令可以转移从 A 到 B 的所有提交。它们必须按照正确的顺序放置：提交 A 必须早于提交 B，否则命令将失败，但不会报错。
+
+注意，使用上面的命令，提交 A 将不会包含在 Cherry pick 中。如果要包含提交 A，可以使用下面的语法。
+git cherry-pick A^..B 
+```
 
 ### 版本恢复的各种场景
 不小心``git add``了不希望add的文件，可以使用``git reset``撤回
