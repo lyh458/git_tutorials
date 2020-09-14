@@ -434,6 +434,7 @@ git log
 ```
 git rebase -i HEAD~3
 ```
+注意：执行该命令所得的排列（从旧到新）与``git log``的排列（从新到旧）相反
 
 - 假如需要合并某个版本（如3a4226b）往后的其他版本（不包含3a4226b,且比它新的版本），使用：
 ```
@@ -456,6 +457,31 @@ git push --force
 
 - 如果希望合并不相邻的commit，可以使用``git rebase -i <commit ID>``先调整顺序，再按照上面的方法合并。参见[Git调整commit之间顺序](https://www.softwhy.com/article-8639-1.html)
 
+### 修改commit注释
+
+#### 只修改上一次的commit注释
+使用``git commmit --amend``指令，然后直接编辑注释，然后保存，最后``git push -f``。
+
+#### 修改历史commit注释
+假设要修改倒数第三条commit的注释
+- 执行 git 命令, 修改近三次的信息
+```
+git rebase -i HEAD~3
+```
+
+- 将该条信息（因为与``git log``的排列相反，所以此时该条commit应该是位于第一位）前的``pick``改为``edit``或者``e``，保存退出。
+
+- 修改改天commit的注释,保存退出
+```
+git rebase --amend
+```
+
+- 执行继续
+```
+git rebase --continue
+```
+
+- 最后强制push
 ### 版本恢复的各种场景
 不小心``git add``了不希望add的文件，可以使用``git reset``撤回
 >reset命令有3种方式：
