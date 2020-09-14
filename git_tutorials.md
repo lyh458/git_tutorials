@@ -90,6 +90,10 @@ git remote add <name> <url>
 ### 选择部分commit ``git cherry-pick``
 [git cherry-pick 教程s](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
 
+### 分支衍合 ``git rebase``
+[Git分支Rebase详解](https://blog.csdn.net/endlu/article/details/51605861)
+[彻底搞懂Git Rebase](https://www.jianshu.com/p/f080912c9cc5)
+
 ### 版本恢复命令 ``git reset``
 不小心git add了不希望add的文件，可以使用git reset撤回。具体见针对场景的教程
 
@@ -357,8 +361,13 @@ git reset --hard <commit_id>
 git push origin HEAD --force
 ```
 
-### 只pull request部分commit
-pull request可以指定分支,你自己的代码可以创建一个分支(以dev分支为例),需要pull request的代码直接放到master分支或其他分支（以master分支为例）。具体地是利用``git cherry-pick``实现：
+### 只pull request部分commit(或者分支合并)
+pull request可以指定分支,你自己的代码可以创建一个分支(以dev分支为例),需要pull request的代码直接放到master分支或其他分支（以master分支为例）。有两种实现方法：
+
+#### 利用``git cherry-pick``实现
+   cherry-pick 就是挑选一个我们需要的 commit 进行操作。它可以用于将在其他分支上的 commit 修改，移植到当前的分支，但是移植的只是一个副本，会生成一个**新的commit记录**，具体地：
+
+参考自[如何优雅地pull request](https://juejin.im/post/6844903648208617485#heading-21)
 
 - 目标：将dev分支的commit1和commit2提交到上游仓库
   
@@ -393,8 +402,59 @@ git cherry-pick A..B
 上面的命令可以转移从 A 到 B 的所有提交。它们必须按照正确的顺序放置：提交 A 必须早于提交 B，否则命令将失败，但不会报错。
 
 注意，使用上面的命令，提交 A 将不会包含在 Cherry pick 中。如果要包含提交 A，可以使用下面的语法。
+```
 git cherry-pick A^..B 
 ```
+
+#### 利用``git rebase``实现
+参考自[巧用 git rebase 将某一部分 commit 复制到另一个分支](https://www.cnblogs.com/yxhblogs/p/10561879.html)
+在我们的实际开发的过程中，我们的项目中会存在多个分支。在某些情况下，可能需要将某一个分支上的 commit 复制到另一个分支上去。
+![](https://i.imgur.com/CD1AnDx.png)
+
+就像这张图所描述的这样，将 develop 分支中的 C~E 部分复制到 master 分支中去,即我们需要将最后三个 commit，复制到 master 分支上去。。这时我们就可以用 git rebase 命令来实现了。
+```
+// startpoint 第一个 commit id, endpoint 最后一个 commit id，branchName 就是目标分支了。
+$ git rebase [startpoint] [endpoint] --onto [branchName]
+```
+
+执行 git rebase 命令之后，我们发现当前的 HEAD 处于游离状态。
+所以我们需要使用 git reset 命令，将 master 所指向的 commit id 设置为当前 HEAD 所指向的 commit id。
+
+### 合并commit
+参考[(Git)合并多个commit](https://segmentfault.com/a/1190000007748862)
+[彻底搞懂Git Rebase](https://www.jianshu.com/p/f080912c9cc5)
+使用 Git 作为版本控制的时候，我们可能会由于各种各样的原因提交了许多临时的 commit，而这些 commit 拼接起来才是完整的任务。造成问题：
+不利于代码 review；会造成分支污染。使用``git rebase``可以解决这个问题。
+- 获取commit ID
+```
+git log
+```
+
+- 假如需要合并从HEAD版本往前的3个版本，使用：
+```
+git rebase -i HEAD~3
+```
+
+- 假如需要合并某个版本（如3a4226b）往后的其他版本（不包含3a4226b,且比它新的版本），使用：
+```
+git rebase -i 3a4226b
+```
+
+- 然后根据提示修改（一般保留最前面的那一个为pick，其他都改为squash），``wq``或者``x``保存退出。
+
+- 修改注释，保存退出。
+Git会压缩提交历史，如果有冲突，需要修改，修改的时候要注意，保留最新的历史，不然我们的修改就丢弃了。修改以后要记得敲下面的命令：
+```
+git add <conflict_files>
+git rebase --continue
+```
+
+- 推送覆盖远程仓库
+```
+git push --force
+```
+
+- 如果希望合并不相邻的commit，可以使用``git rebase -i <commit ID>``先调整顺序，再按照上面的方法合并。参见[Git调整commit之间顺序](https://www.softwhy.com/article-8639-1.html)
 
 ### 版本恢复的各种场景
 不小心``git add``了不希望add的文件，可以使用``git reset``撤回
@@ -472,3 +532,6 @@ git receive.denyDeleteCurrent warn
 #### fatal: remote error: You can't push to git://github.com/test4581/test.git Use https://github.com/test4581/test.git
 
 如果在git clone的时候用的是``git://github.com:xx/xxx.git ``的形式, 那么就会出现这个问题，因为这个protocol是不支持push的,用``git clone git@github.com:xx/xxx.git``就可以用git push了。
+
+#### Merge branch 'master' of ...
+[Git push 时如何避免出现 "Merge branch 'master' of ..."](https://www.cnblogs.com/Sinte-Beuve/p/9195018.html)
