@@ -136,7 +136,9 @@ git tag -l
 ```
 
 ### 暂存当前正在进行的工作 ``git stash``&``git stash pop``
-[link](http://www.tech126.com/git-reset/)
+<span id = "git_stash">git stash anchor</span>
+[git stash的详细讲解](https://www.jianshu.com/p/14afc9916dcb)
+[git stash 用法总结和注意点](https://www.cnblogs.com/zndxall/archive/2018/09/04/9586088.html)
 
 > git stash 可用来暂存当前正在进行的工作， 比如想pull 最新代码， 又不想加新commit， 或者另外一种情况，为了fix 一个紧急的bug,  先stash, 使返回到自己上一个commit, 改完bug之后再stash pop, 继续原来的工作。
 
@@ -144,7 +146,7 @@ git tag -l
 基础命令：
 ```
 git stash
-do some work
+<do some work>
 git stash pop
 ```
 
@@ -487,7 +489,7 @@ git rebase --continue
 
 - 最后强制push
 
-### ``git log``过来Merge信息
+### ``git log``过滤Merge信息
 参考[git log 过滤Merge信息](https://www.jianshu.com/p/11e30cf91ccb)
 git log输出包含merge信息。但是，如果开发组总是把上游分支里的更新mege到feature分支，而不是将feature分支rebase到上游分支，就会在代码库中看到非常多的merge信息。
 - 使用--no-merges来过滤掉这个merge信息
@@ -499,6 +501,27 @@ git log --no-merges
 ```
 git log --merges |grep 'Merge branch'|wc -l
 ```
+
+### 利用``git stash``暂存未commit的修改
+场景需求：当你的开发进行到一半，但是代码还不想进行提交，然后需要同步去关联远端代码时。如果你本地的代码和远端代码没有冲突时。可以直接通过git pull解决。但是如果可能发生冲突怎么办.直接git pull会拒绝覆盖当前的修改。
+
+解决方法：使用``git stash``暂存本地代码，然后``git pull``，最后使用``git stash pop``取回暂存的代码
+```
+git stash
+git pull
+git stash pop
+```
+``git stash``详细用法参见[git stash anchor](#git_stash)
+
+当本地（已经commit）和远程仓库都做了不同修改，如何pull远程仓库的内容？参考[git pull --rebase](#git_pull_rebase)
+
+### 使用``git pull --rebase``实现当本地（已经commit）和远程仓库都做了不同修改，pull远程仓库的内容
+<span id = "git_pull_rebase"> anchor: git pull --rebase</span>
+场景需求：当本地（已经commit）和远程仓库都做了不同修改，此时如果想push本地的修改到远程仓库，会被rejected。此时可以先pull，然后便可以成功push。但是往往会出现[Merge branch 'master' of ...](#Merge_branch_master_of)的问题。解决方法：
+```
+git pull --rebase
+```
+如果pull不产生冲突，会直接rebase，不会产生分支合并操作；如果有冲突则需要手动fix后，自行合并。参考[Git push 时如何避免出现 "Merge branch 'master' of ..."](https://www.cnblogs.com/Sinte-Beuve/p/9195018.html)
 
 - [git log高阶用法](https://www.jianshu.com/p/73f13d2725a8)
 
@@ -569,15 +592,31 @@ git receive.denyDeleteCurrent warn
 然后，就可以删除远程的master分支了
 虽然说有以上2种方法可以回退远程分支的版本，但这2种方式，都挺危险的，需要谨慎操作
 
+### git比较本地仓库和远程仓库的差异
+- 更新本地的远程分支
+```
+git fetch origin
+```
+
+- 本地与远程的差集 :（显示远程有而本地没有的commit信息）
+```
+git log master..origin/master
+```
+
+- 统计文件的改动
+```
+git diff <local branch> <remote>/<remote branch>
+```
 
 ### large files
 
 [Git Large File Storage](http://note.youdao.com/)
 
-### issue
+### issues
 #### fatal: remote error: You can't push to git://github.com/test4581/test.git Use https://github.com/test4581/test.git
 
 如果在git clone的时候用的是``git://github.com:xx/xxx.git ``的形式, 那么就会出现这个问题，因为这个protocol是不支持push的,用``git clone git@github.com:xx/xxx.git``就可以用git push了。
 
 #### Merge branch 'master' of ...
+<span id = "Merge_branch_master_of">anchor: Merge branch 'master' of ...</span>
 [Git push 时如何避免出现 "Merge branch 'master' of ..."](https://www.cnblogs.com/Sinte-Beuve/p/9195018.html)
