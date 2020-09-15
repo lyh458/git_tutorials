@@ -92,6 +92,8 @@ git remote add <name> <url>
 
 ### 分支衍合 ``git rebase``
 [Git分支Rebase详解](https://blog.csdn.net/endlu/article/details/51605861)
+> 如果把衍合当成一种在推送之前清理提交历史的手段，而且仅仅衍合那些尚未公开的提交对象，就没问题。如果衍合那些已经公开的提交对象，并且已经有人基于这些提交对象开展了后续开发工作的话，就会出现叫人沮丧的麻烦。
+
 [彻底搞懂Git Rebase](https://www.jianshu.com/p/f080912c9cc5)
 
 ### 版本恢复命令 ``git reset``
