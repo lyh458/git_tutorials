@@ -607,6 +607,29 @@ git log master..origin/master
 ```
 git diff <local branch> <remote>/<remote branch>
 ```
+### git 对比两个分支差异
+场景需求：假设有 2 个分支：master, dev，现在想查看这两个 branch 的区别，有以下几种方式：
+
+- 查看 dev 有，而 master 中没有的：
+```
+git log dev ^master
+```
+
+- 查看 dev 中比 master 中多提交了哪些内容：
+```
+git log master..dev
+```
+
+- 不知道谁提交的多谁提交的少，单纯想知道有什么不一样：
+```
+git log dev...master
+```
+
+- 在上述情况下，再显示出每个提交是在哪个分支上：
+```
+git log --left-right dev...master
+```
+注意 commit 后面的箭头，根据我们在 –left-right dev…master 的顺序，左箭头 < 表示是 dev 的，右箭头 > 表示是 master的。
 
 ### large files
 
