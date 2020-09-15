@@ -486,6 +486,22 @@ git rebase --continue
 ```
 
 - 最后强制push
+
+### ``git log``过来Merge信息
+参考[git log 过滤Merge信息](https://www.jianshu.com/p/11e30cf91ccb)
+git log输出包含merge信息。但是，如果开发组总是把上游分支里的更新mege到feature分支，而不是将feature分支rebase到上游分支，就会在代码库中看到非常多的merge信息。
+- 使用--no-merges来过滤掉这个merge信息
+```
+git log --no-merges
+```
+
+- 统计merge在log中的总数
+```
+git log --merges |grep 'Merge branch'|wc -l
+```
+
+- [git log高阶用法](https://www.jianshu.com/p/73f13d2725a8)
+
 ### 版本恢复的各种场景
 不小心``git add``了不希望add的文件，可以使用``git reset``撤回
 >reset命令有3种方式：
