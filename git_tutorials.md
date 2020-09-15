@@ -255,9 +255,10 @@ git push origin master
 - 在网页端新建一个同名的空白仓库
 - 然后再``git push -u origin``
 
-### 从远程的分支获取最新的版本到有这样2个命令
+### 从远程的分支获取最新的版本
 
-- git fetch：相当于是从远程获取最新版本到本地，不会自动merge
+#### 使用``git fetch``,然后merge
+相当于是从远程获取最新版本到本地，不会自动merge
 ```   
 git fetch origin master
 git log -p master..origin/master
@@ -278,7 +279,8 @@ git merge tmp
 
 从远程获取最新的版本到本地的test分支上之后再进行比较合并
 
-- git pull：相当于是从远程获取最新版本并merge到本地
+#### 直接使用``git pull``
+相当于是从远程获取最新版本并merge到本地
 ``` 
 git pull origin master
 ```
@@ -445,10 +447,10 @@ git rebase -i 3a4226b
 
 - 修改注释，保存退出。
 Git会压缩提交历史，如果有冲突，需要修改，修改的时候要注意，保留最新的历史，不然我们的修改就丢弃了。修改以后要记得敲下面的命令：
-```
-git add <conflict_files>
-git rebase --continue
-```
+   ```
+   git add <conflict_files>
+   git rebase --continue
+   ```
 
 - 推送覆盖远程仓库
 ```
