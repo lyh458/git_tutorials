@@ -1,5 +1,6 @@
 [TOC]
 # Github使用教程
+强烈推荐[Git Documentations](https://git-scm.com/book/zh/v2)
 
 ## 基本指令
 ### 对现有的某个项目管理 ``git init``
@@ -91,10 +92,10 @@ git remote add <name> <url>
 [git cherry-pick 教程s](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
 
 ### 分支衍合 ``git rebase``
-[Git分支Rebase详解](https://blog.csdn.net/endlu/article/details/51605861)
+[Git分支rebase详解](https://blog.csdn.net/endlu/article/details/51605861)
 > 如果把衍合当成一种在推送之前清理提交历史的手段，而且仅仅衍合那些尚未公开的提交对象，就没问题。如果衍合那些已经公开的提交对象，并且已经有人基于这些提交对象开展了后续开发工作的话，就会出现叫人沮丧的麻烦。
 
-[彻底搞懂Git Rebase](https://www.jianshu.com/p/f080912c9cc5)
+[彻底搞懂git rebase](https://www.jianshu.com/p/f080912c9cc5)
 
 ### 版本恢复命令 ``git reset``
 不小心git add了不希望add的文件，可以使用git reset撤回。具体见针对场景的教程
@@ -426,7 +427,118 @@ $ git rebase [startpoint] [endpoint] --onto [branchName]
 执行 git rebase 命令之后，我们发现当前的 HEAD 处于游离状态。
 所以我们需要使用 git reset 命令，将 master 所指向的 commit id 设置为当前 HEAD 所指向的 commit id。
 
-### 合并commit
+### 合并分支
+场景需求：将test分支的新增内容合并到master分支(两个分支存在有交叉及无交叉两种情况)，可以使用四种方法实现：
+参考自[图解4种git合并分支方法](https://yanhaijing.com/git/2017/07/14/four-method-for-git-merge/)
+
+#### 两个分支没有交叉时
+##### ``git merge``采用fast-forward快速合并
+待合并的分支在当前分支的下游，也就是说没有分叉时，会发生快速合并，从test分支切换到master分支，然后合并test分支.
+```
+git checkout master
+git merge dev
+```
+这种方法相当于直接把master分支移动到test分支所在的地方，并移动HEAD指针（不会产生新的commit）。
+<!-- ![](https://i.imgur.com/qH4dVsW.gif) -->
+![](http://yanhaijing.com/blog/498.gif)
+![fast-forward](https://i.imgur.com/Tlbgfzt.png)
+
+##### 使用``git merge --no-ff``强制非快速合并
+如果我们不想要快速合并，那么我们可以强制指定为非快速合并（生成新的合并commit,即merge commit），只需加上--no-ff参数
+```
+git checkout master
+git merge --no-ff dev
+```
+这种合并方法会在master分支上新建一个提交节点，从而完成合并
+<!-- ![](https://i.imgur.com/szJCKOW.gif) -->
+![](https://yanhaijing.com/blog/499.gif)
+![git merge --no-ff](https://i.imgur.com/S28uJJl.png)
+
+##### 使用``git merge --squash``
+svn的在合并分支时采用的就是这种方式，squash会在当前分支新建一个提交节点。
+```
+git checkout master
+git merge --squash dev
+```
+<!-- ![](https://i.imgur.com/DfYYql2.gif) -->
+![](https://yanhaijing.com/blog/500.gif)
+squash和no-ff非常类似，区别只有一点不会保留对合入分支的引用（对于文件来说，合并效果和前面两种方式是一样的，但是区别在于执行``git merge --squash``后，master分支处于``git add``后的状态，需要再执行``git commmit``，而前面两种方式是执行完后就处于commit完成状态）
+![git merge --squash](https://i.imgur.com/N5hJmDb.png)
+
+##### 使用``git rebase``
+在分支没有交叉时，采用``git rebase``的方式与采用``git merge``fast forward是完全一样的。
+
+#### 当两个分支存在交叉时
+
+##### 使用``git merge``
+
+###### 当两个分支存在交叉时，使用``git merge``就等同于``git merge --no-ff``，而且很大机率会出现merge conflict。
+![分支存在交叉时，git merge产生的conflict](https://i.imgur.com/VhnmGpF.png)
+
+- 按照提示定位到冲突发生的文件并进行修改，所有冲突解决完后，然后``git add .``
+![修改前后](https://i.imgur.com/Jbnd7hV.png)
+
+- 再``git commit``，会自动弹出一个merge commit的注释编辑窗口，编辑或者直接保存即可。
+![merge conflict注释编辑](https://i.imgur.com/gyZvZAo.png)
+
+- 查看``git log``会发现最后的合并效果
+由于git是根据检测行的变化来检测仓库是否发生变化，所以细心可以发现master commit的顺序会根据修改conflict时行内容对应的commit发生调整。
+![merge效果](https://i.imgur.com/iKrtELQ.png)
+![commit顺序发生变化](https://i.imgur.com/erT2RYg.png)
+
+###### 当两个分支存在交叉时，使用``git merge --squash``
+当两个分支存在交叉时，使用``git merge --squash``不会对dev分支交叉部分引用，而是把dev的交叉部分的commit注释合并生产一个新的squash注释。
+![squash commit注释编辑窗口](https://i.imgur.com/4Mlv9B0.png)
+
+![git merge --squash最终效果](https://i.imgur.com/eqGnQSS.png)
+
+##### 使用``git rebase``
+
+rebase与merge不同，rebase会将合入分支上超前的节点在待合入分支上重新提交一遍（即假如当前位于dev分支，执行``git rebase master``后，会将dev分支上超前的节点，在master上重新提交一遍，同时dev HEAD的位置也会相应变化），如下图，B1 B2会变为B1’ B2’，看起来会变成线性历史。
+![rebase合并](https://i.imgur.com/kzKXrlt.png)
+
+``git rebase``前
+![git rebase前](https://i.imgur.com/vT7n5Tq.png)
+
+``git rebase master``后
+![git rebase后](https://i.imgur.com/2jpczlL.png)
+
+当分支存在交叉时，使用``git rebase``时也会大概率存在冲突，而且冲突即使在同一个文件中，也得一个一个解决。解决冲突步骤：
+- 修改冲突部分
+- ``git add/rm <conflicted_files>``
+- ``git rebase --continue``
+- 如果第三步无效可以执行``git rebase --skip``，或者撤销修改退出rebase回到原来状态``git rebase --abort``。
+
+#### ``git rebase``使用法则
+
+**！！！注意****The Golden Rule of Rebasing rebase****git rebase的黄金法则**：不要在公开的分支上使用``git rebase``，即一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行衍合操作。
+简单来说：一旦你的commit已经推送到远程仓库，并且有其他人已经fork去使用，那么就不要对这些commit执行``git rebase``操作了。
+
+参考自[Git分支Rebase详解](https://blog.csdn.net/endlu/article/details/51605861)
+[git rebase成功后如何撤销](#git_rebase_withdraw)
+
+#### 使用``git cherry-pick``
+
+``git cherry-pick``给你自由，想把那个节点merge过来就把那个节点merge过来，其合入的不是分支而是提交节点，所以适用于任何情况。
+
+#### 优缺点对比
+
+merge结果能够体现出时间线，但是rebase会打乱时间线；rebase看起来简洁，但是merge看起来不太简洁
+
+##### ``git merge``
+
+- marge 特点：自动创建一个新的commit，如果合并的时候遇到冲突，仅需要修改后重新commit
+- 优点：记录了真实的commit情况，包括每个分支的详情
+- 缺点：因为每次merge会自动产生一个merge commit，所以在使用一些git 的GUI tools，特别是commit比较频繁时，看到分支很杂乱。
+
+##### ``git rebase``
+
+- rebase 特点：会合并之前的commit历史
++ 优点：得到更简洁的项目历史，去掉了merge commit
+- 缺点：如果合并出现代码问题不容易定位，因为re-write了history
+
+### 合并多个commit
+
 参考[(Git)合并多个commit](https://segmentfault.com/a/1190000007748862)
 [彻底搞懂Git Rebase](https://www.jianshu.com/p/f080912c9cc5)
 使用 Git 作为版本控制的时候，我们可能会由于各种各样的原因提交了许多临时的 commit，而这些 commit 拼接起来才是完整的任务。造成问题：
@@ -477,7 +589,7 @@ git rebase -i HEAD~3
 
 - 将该条信息（因为与``git log``的排列相反，所以此时该条commit应该是位于第一位）前的``pick``改为``edit``或者``e``，保存退出。
 
-- 修改改天commit的注释,保存退出
+- 修改改条commit的注释,保存退出
 ```
 git rebase --amend
 ```
@@ -488,6 +600,15 @@ git rebase --continue
 ```
 
 - 最后强制push
+
+### ``git rebase``成功后如何撤销
+<span id = "git_rebase_withdraw"> anchor: git rebase成功后如何撤销</span>
+参考自[git rebase 成功之后如何撤销](https://blog.csdn.net/chengde6896383/article/details/83418488)
+git rebase 过程中可以使用git --abort/--continue来进行操作，成功之后如何撤销呢？
+
+- 首先执行``git reflog``查看本地记录，找到rebase前的commit ID
+
+- 然后执行``git reset --hard <commit ID>
 
 ### ``git log``过滤Merge信息
 参考[git log 过滤Merge信息](https://www.jianshu.com/p/11e30cf91ccb)
@@ -500,6 +621,11 @@ git log --no-merges
 - 统计merge在log中的总数
 ```
 git log --merges |grep 'Merge branch'|wc -l
+```
+
+- 查看本地记录
+```
+git reflog
 ```
 
 ### 利用``git stash``暂存未commit的修改
@@ -526,72 +652,123 @@ git pull --rebase
 - [git log高阶用法](https://www.jianshu.com/p/73f13d2725a8)
 
 ### 版本恢复的各种场景
-不小心``git add``了不希望add的文件，可以使用``git reset``撤回
->reset命令有3种方式：
+``git add``或者``git commit``或者push了不希望的文件，可以使用相应指令恢复。
+参考自[git放弃本地文件修改](https://www.jianshu.com/p/c0f7e4ac14c7)
 
->1：**git reset –mixed：** 此为默认方式，不带任何参数的git reset，即时这种方式，它回退到某个版本，只保留源码，回退commit和index信息
+#### 未使用``git add``缓存代码，使用``git checkout``放弃修改
+- 放弃指定文件修改
+```
+git checkou -- <filename>
+```
 
->2：**git reset –soft：** 回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可
+- 放弃所有文件的修改
+```
+git checkout .
+```
+或者
+```
+git checkout -f
+```
+此时你修改的文件和删除的文件都会被恢复，但是你新添加的文件不会被删除
 
->3：**git reset –hard：** 彻底回退到某个版本，本地的源码也会变为上一个版本的内容
+- 放弃指定文件夹的修改
+```
+git checkout <directory>
+```
+此时指定目录下修改的文件和删除的文件都会被恢复，但是你新添加的文件不会被删除
+
+#### 已使用``git add``缓存代码，未使用``git commit``
+- 放弃单个文件修改
+```
+git reset HEAD <filename>
+```
+
+- 放弃所有文件的修改
+```
+git reset HEAD
+```
+此命令用来清除 git 对于文件修改的缓存。相当于撤销 git add 命令所在的工作。在使用本命令后，本地的修改并不会消失，而是回到了第一步1. 未使用git add 缓存代码，继续使用用``git checkout -- <filename>``，就可以放弃本地修改
+
+#### 已经用``git commit``提交了代码
+- 回退到上一次commit的状态
+```
+git reset --hard HEAD^
+```
+
+- 回退到任意版本
+```
+git reset --hard <commitID>
+```
+
+#### ``git clean``放弃新添加的文件或文件夹
+- 放弃 仓库所有 添加
+```
+git clean –df
+```
+此时该仓库下所有新添加文件将被清除, 不会对已修改和已删除的文件做任何处理
+
+- 放弃 指定文件 添加
+```
+git clean <filename> –df
+```
+此时该新添加文件将被清除, 不会对已修改和已删除的文件做任何处理
+
+- 放弃 指定文件夹 添加
+```
+git clean <directory> –df
+```
+此时该目录新添加文件将被清除, 不会对已修改和已删除的文件做任何处理
+
+- 其他
+> 忽略的文件：.gitignore 中忽略的文件；
+> 未被跟踪的文件：没有被忽略，但是还没 git add 的文件
 
 ```
-#回退所有内容到上一个版本 
-git reset HEAD^ 
-#回退a.py这个文件的版本到上一个版本 
+git clean  -f             # 删除：未被跟踪的文件
+git clean –fd             # 删除：未被跟踪的文件和文件夹
+git clean –xfd            # 删除：忽略的文件、未被跟踪的文件和文件夹
+git clean [-xfd] -n-n     # 会先打印一些将要删除的文件，并不执行删除动作，主要是查看是否有自己需要的不想被删除
+```
+
+#### 更多``git reset``的用法
+
+reset命令有3种方式：
+>1：**git reset --mixed：** 此为默认方式，不带任何参数的git reset，即时这种方式，它回退到某个版本，只保留源码，回退commit和index信息
+
+>2：**git reset --soft：** 回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可
+
+>3：**git reset --hard：** 彻底回退到某个版本，本地的源码也会变为上一个版本的内容
+
+
+- 回退所有内容到上一个版本 
+```
+git reset HEAD^
+``` 
+
+- 回退a.py这个文件的版本到上一个版本
+```
 git reset HEAD^ a.py 
-#向前回退到第3个版本 
+```
+
+- 向前回退到第3个版本 
+```
 git reset –soft HEAD~3 
-#将本地的状态回退到和远程的一样 
+```
+
+- 将本地的状态回退到和远程的一样 
+```
 git reset –hard origin/master 
-#回退到某个版本 
+```
+
+- 回退到某个版本 
+```
 git reset 057d 
-#回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit 
+```
+
+-回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit 
+```
 git revert HEAD 
 ```
-
-如果我们某次修改了某些内容，并且已经commit到本地仓库，而且已经push到远程仓库了
-这种情况下，我们想把本地和远程仓库都回退到某个版本，该怎么做呢？
-前面讲到的git reset只是在本地仓库中回退版本，而远程仓库的版本不会变化
-这样，即使本地reset了，但如果再git pull，那么，远程仓库的内容又会和本地之前版本的内容进行merge
-这并不是我们想要的东西，这时可以有2种办法来解决这个问题：
-1：直接在远程server的仓库目录下，执行git reset –soft 10efa来回退。注意：在远程不能使用mixed或hard参数
-2：在本地直接把远程的master分支给删除，然后再把reset后的分支内容给push上去，如下：
-```
-#新建old_master分支做备份  
-git branch old_master  
-#push到远程  
-git push origin old_master:old_master  
-#本地仓库回退到某个版本  
-git reset –hard bae168  
-#删除远程的master分支  
-git push origin :master  
-#重新创建master分支  
-git push origin master  
-```
-在删除远程master分支时，可能会有问题，见下：
-```
-$ git push origin :master  
-error: By default, deleting the current branch is denied, because the next  
-error: 'git clone' won't result in any file checked out, causing confusion.  
-error:  
-error: You can set 'receive.denyDeleteCurrent' configuration variable to  
-error: 'warn' or 'ignore' in the remote repository to allow deleting the  
-error: current branch, with or without a warning message.  
-error:  
-error: To squelch this message, you can set it to 'refuse'.  
-error: refusing to delete the current branch: refs/heads/master  
-To git@xx.sohu.com:gitosis_test  
- ! [remote rejected] master (deletion of the current branch prohibited)  
-error: failed to push some refs to 'git@xx.sohu.com:gitosis_test'
-```
-这时需要在远程仓库目录下，设置git的receive.denyDeleteCurrent参数
-```
-git receive.denyDeleteCurrent warn
-```
-然后，就可以删除远程的master分支了
-虽然说有以上2种方法可以回退远程分支的版本，但这2种方式，都挺危险的，需要谨慎操作
-
 ### git比较本地仓库和远程仓库的差异
 - 更新本地的远程分支
 ```

@@ -270,6 +270,9 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#%E4%BB%8E%E7%8E%B0%E6%9C%89%E4%BB%93%E5%BA%93%E5%85%8B%E9%9A%86git-clone">&#x4ECE;&#x73B0;&#x6709;&#x4ED3;&#x5E93;&#x514B;&#x9686;<code>git clone</code></a></li>
 <li><a href="#%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81-git-status">&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x72B6;&#x6001; <code>git status</code></a></li>
 <li><a href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86-git-branch">&#x5206;&#x652F;&#x7BA1;&#x7406; <code>git branch</code></a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93-git-remote">&#x6DFB;&#x52A0;&#x4E0A;&#x6E38;&#x4ED3;&#x5E93; <code>git remote</code></a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E9%83%A8%E5%88%86commit-git-cherry-pick">&#x9009;&#x62E9;&#x90E8;&#x5206;commit <code>git cherry-pick</code></a></li>
+<li><a href="#%E5%88%86%E6%94%AF%E8%A1%8D%E5%90%88-git-rebase">&#x5206;&#x652F;&#x884D;&#x5408; <code>git rebase</code></a></li>
 <li><a href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4-git-reset">&#x7248;&#x672C;&#x6062;&#x590D;&#x547D;&#x4EE4; <code>git reset</code></a></li>
 <li><a href="#%E6%89%93%E6%A0%87%E7%AD%BE-git-tag">&#x6253;&#x6807;&#x7B7E; <code>git tag</code></a></li>
 <li><a href="#%E6%9A%82%E5%AD%98%E5%BD%93%E5%89%8D%E6%AD%A3%E5%9C%A8%E8%BF%9B%E8%A1%8C%E7%9A%84%E5%B7%A5%E4%BD%9C-git-stashgit-stash-pop">&#x6682;&#x5B58;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x7684;&#x5DE5;&#x4F5C; <code>git stash</code>&amp;<code>git stash pop</code></a></li>
@@ -281,6 +284,12 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#github%E5%85%8D%E5%AF%86ssh%E7%AE%A1%E7%90%86">github&#x514D;&#x5BC6;ssh&#x7BA1;&#x7406;</a></li>
 <li><a href="#%E5%B0%86%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E9%9D%9Egit-clone%E6%89%98%E7%AE%A1%E5%88%B0github">&#x5C06;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x9879;&#x76EE;&#xFF08;&#x975E;git clone&#xFF09;&#x6258;&#x7BA1;&#x5230;github</a></li>
 <li><a href="#%E5%B0%86%E4%B8%80%E4%B8%AA%E4%BB%8E%E4%BB%96%E4%BA%BA%E4%BB%93%E5%BA%93git-clone%E4%B8%8B%E6%9D%A5%E7%9A%84%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93push%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">&#x5C06;&#x4E00;&#x4E2A;&#x4ECE;&#x4ED6;&#x4EBA;&#x4ED3;&#x5E93;git clone&#x4E0B;&#x6765;&#x7684;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;push&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</a></li>
+<li><a href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC">&#x4ECE;&#x8FDC;&#x7A0B;&#x7684;&#x5206;&#x652F;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8git-fetch%E7%84%B6%E5%90%8Emerge">&#x4F7F;&#x7528;<code>git fetch</code>,&#x7136;&#x540E;merge</a></li>
+<li><a href="#%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8git-pull">&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>git pull</code></a></li>
+</ul>
+</li>
 <li><a href="#github%E4%B8%8Afork%E8%BF%87%E6%9D%A5%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A6%82%E4%BD%95%E4%B8%8E%E5%8E%9F%E4%BB%93%E5%BA%93%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5">github&#x4E0A;fork&#x8FC7;&#x6765;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5982;&#x4F55;&#x4E0E;&#x539F;&#x4ED3;&#x5E93;&#x4FDD;&#x6301;&#x540C;&#x6B65;</a>
 <ul>
 <li><a href="#1-%E5%9C%A8github%E7%BD%91%E9%A1%B5%E7%AB%AF%E7%9B%B4%E6%8E%A5pull-request">1. &#x5728;github&#x7F51;&#x9875;&#x7AEF;&#x76F4;&#x63A5;pull request</a></li>
@@ -290,13 +299,70 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#%E5%BF%BD%E7%95%A5%E4%B8%8D%E6%83%B3commit%E7%9A%84%E6%96%87%E4%BB%B6">&#x5FFD;&#x7565;&#x4E0D;&#x60F3;commit&#x7684;&#x6587;&#x4EF6;</a></li>
 <li><a href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93">&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;</a></li>
 <li><a href="#push%E7%8E%B0%E6%9C%89%E7%9A%84%E4%BB%93%E5%BA%93%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84github">push&#x73B0;&#x6709;&#x7684;&#x4ED3;&#x5E93;&#x5230;&#x81EA;&#x5DF1;&#x7684;github</a></li>
-<li><a href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%9C%89%E8%BF%99%E6%A0%B72%E4%B8%AA%E5%91%BD%E4%BB%A4">&#x4ECE;&#x8FDC;&#x7A0B;&#x7684;&#x5206;&#x652F;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5230;&#x672C;&#x5730;&#x6709;&#x8FD9;&#x6837;2&#x4E2A;&#x547D;&#x4EE4;</a></li>
 <li><a href="#%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E5%B7%B2%E7%BB%8F%E6%8F%90%E4%BA%A4%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84commit">&#x5982;&#x4F55;&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;commit</a></li>
-<li><a href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E7%9A%84%E5%90%84%E7%A7%8D%E5%9C%BA%E6%99%AF">&#x7248;&#x672C;&#x6062;&#x590D;&#x7684;&#x5404;&#x79CD;&#x573A;&#x666F;</a></li>
+<li><a href="#%E5%8F%AApull-request%E9%83%A8%E5%88%86commit%E6%88%96%E8%80%85%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6">&#x53EA;pull request&#x90E8;&#x5206;commit(&#x6216;&#x8005;&#x5206;&#x652F;&#x5408;&#x5E76;)</a>
+<ul>
+<li><a href="#%E5%88%A9%E7%94%A8git-cherry-pick%E5%AE%9E%E7%8E%B0">&#x5229;&#x7528;<code>git cherry-pick</code>&#x5B9E;&#x73B0;</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8git-rebase%E5%AE%9E%E7%8E%B0">&#x5229;&#x7528;<code>git rebase</code>&#x5B9E;&#x73B0;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF">&#x5408;&#x5E76;&#x5206;&#x652F;</a>
+<ul>
+<li><a href="#%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E6%B2%A1%E6%9C%89%E4%BA%A4%E5%8F%89%E6%97%B6">&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x6CA1;&#x6709;&#x4EA4;&#x53C9;&#x65F6;</a>
+<ul>
+<li><a href="#git-merge%E9%87%87%E7%94%A8fast-forward%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6"><code>git merge</code>&#x91C7;&#x7528;fast-forward&#x5FEB;&#x901F;&#x5408;&#x5E76;</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8git-merge-no-ff%E5%BC%BA%E5%88%B6%E9%9D%9E%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6">&#x4F7F;&#x7528;<code>git merge --no-ff</code>&#x5F3A;&#x5236;&#x975E;&#x5FEB;&#x901F;&#x5408;&#x5E76;</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8git-merge-squash">&#x4F7F;&#x7528;<code>git merge --squash</code></a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8git-rebase">&#x4F7F;&#x7528;<code>git rebase</code></a></li>
+</ul>
+</li>
+<li><a href="#%E5%BD%93%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8%E4%BA%A4%E5%8F%89%E6%97%B6">&#x5F53;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8git-merge">&#x4F7F;&#x7528;<code>git merge</code></a>
+<ul>
+<li><a href="#%E5%BD%93%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8%E4%BA%A4%E5%8F%89%E6%97%B6%E4%BD%BF%E7%94%A8git-merge%E5%B0%B1%E7%AD%89%E5%90%8C%E4%BA%8Egit-merge-no-ff%E8%80%8C%E4%B8%94%E5%BE%88%E5%A4%A7%E6%9C%BA%E7%8E%87%E4%BC%9A%E5%87%BA%E7%8E%B0merge-conflict">&#x5F53;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>git merge</code>&#x5C31;&#x7B49;&#x540C;&#x4E8E;<code>git merge --no-ff</code>&#xFF0C;&#x800C;&#x4E14;&#x5F88;&#x5927;&#x673A;&#x7387;&#x4F1A;&#x51FA;&#x73B0;merge conflict&#x3002;</a></li>
+<li><a href="#%E5%BD%93%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8%E4%BA%A4%E5%8F%89%E6%97%B6%E4%BD%BF%E7%94%A8git-merge-squash">&#x5F53;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>git merge --squash</code></a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8git-rebase-1">&#x4F7F;&#x7528;<code>git rebase</code></a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8git-cherry-pick">&#x4F7F;&#x7528;<code>git cherry-pick</code></a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94">&#x4F18;&#x7F3A;&#x70B9;&#x5BF9;&#x6BD4;</a>
+<ul>
+<li><a href="#git-merge"><code>git merge</code></a></li>
+<li><a href="#git-rebase"><code>git rebase</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAcommit">&#x5408;&#x5E76;&#x591A;&#x4E2A;commit</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9commit%E6%B3%A8%E9%87%8A">&#x4FEE;&#x6539;commit&#x6CE8;&#x91CA;</a>
+<ul>
+<li><a href="#%E5%8F%AA%E4%BF%AE%E6%94%B9%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84commit%E6%B3%A8%E9%87%8A">&#x53EA;&#x4FEE;&#x6539;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x6CE8;&#x91CA;</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%B3%A8%E9%87%8A">&#x4FEE;&#x6539;&#x5386;&#x53F2;commit&#x6CE8;&#x91CA;</a></li>
+</ul>
+</li>
+<li><a href="#git-rebase%E6%88%90%E5%8A%9F%E5%90%8E%E5%A6%82%E4%BD%95%E6%92%A4%E9%94%80"><code>git rebase</code>&#x6210;&#x529F;&#x540E;&#x5982;&#x4F55;&#x64A4;&#x9500;</a></li>
+<li><a href="#git-log%E8%BF%87%E6%BB%A4merge%E4%BF%A1%E6%81%AF"><code>git log</code>&#x8FC7;&#x6EE4;Merge&#x4FE1;&#x606F;</a></li>
+<li><a href="#%E5%88%A9%E7%94%A8git-stash%E6%9A%82%E5%AD%98%E6%9C%AAcommit%E7%9A%84%E4%BF%AE%E6%94%B9">&#x5229;&#x7528;<code>git stash</code>&#x6682;&#x5B58;&#x672A;commit&#x7684;&#x4FEE;&#x6539;</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8git-pull-rebase%E5%AE%9E%E7%8E%B0%E5%BD%93%E6%9C%AC%E5%9C%B0%E5%B7%B2%E7%BB%8Fcommit%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E9%83%BD%E5%81%9A%E4%BA%86%E4%B8%8D%E5%90%8C%E4%BF%AE%E6%94%B9pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E5%86%85%E5%AE%B9">&#x4F7F;&#x7528;<code>git pull --rebase</code>&#x5B9E;&#x73B0;&#x5F53;&#x672C;&#x5730;&#xFF08;&#x5DF2;&#x7ECF;commit&#xFF09;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x90FD;&#x505A;&#x4E86;&#x4E0D;&#x540C;&#x4FEE;&#x6539;&#xFF0C;pull&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x5185;&#x5BB9;</a></li>
+<li><a href="#%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E7%9A%84%E5%90%84%E7%A7%8D%E5%9C%BA%E6%99%AF">&#x7248;&#x672C;&#x6062;&#x590D;&#x7684;&#x5404;&#x79CD;&#x573A;&#x666F;</a>
+<ul>
+<li><a href="#%E6%9C%AA%E4%BD%BF%E7%94%A8git-add%E7%BC%93%E5%AD%98%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8git-checkout%E6%94%BE%E5%BC%83%E4%BF%AE%E6%94%B9">&#x672A;&#x4F7F;&#x7528;<code>git add</code>&#x7F13;&#x5B58;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528;<code>git checkout</code>&#x653E;&#x5F03;&#x4FEE;&#x6539;</a></li>
+<li><a href="#%E5%B7%B2%E4%BD%BF%E7%94%A8git-add%E7%BC%93%E5%AD%98%E4%BB%A3%E7%A0%81%E6%9C%AA%E4%BD%BF%E7%94%A8git-commit">&#x5DF2;&#x4F7F;&#x7528;<code>git add</code>&#x7F13;&#x5B58;&#x4EE3;&#x7801;&#xFF0C;&#x672A;&#x4F7F;&#x7528;<code>git commit</code></a></li>
+<li><a href="#%E5%B7%B2%E7%BB%8F%E7%94%A8git-commit%E6%8F%90%E4%BA%A4%E4%BA%86%E4%BB%A3%E7%A0%81">&#x5DF2;&#x7ECF;&#x7528;<code>git commit</code>&#x63D0;&#x4EA4;&#x4E86;&#x4EE3;&#x7801;</a></li>
+<li><a href="#git-clean%E6%94%BE%E5%BC%83%E6%96%B0%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9"><code>git clean</code>&#x653E;&#x5F03;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9Agit-reset%E7%9A%84%E7%94%A8%E6%B3%95">&#x66F4;&#x591A;<code>git reset</code>&#x7684;&#x7528;&#x6CD5;</a></li>
+</ul>
+</li>
+<li><a href="#git%E6%AF%94%E8%BE%83%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E5%B7%AE%E5%BC%82">git&#x6BD4;&#x8F83;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x5DEE;&#x5F02;</a></li>
+<li><a href="#git-%E5%AF%B9%E6%AF%94%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%B7%AE%E5%BC%82">git &#x5BF9;&#x6BD4;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5DEE;&#x5F02;</a></li>
 <li><a href="#large-files">large files</a></li>
-<li><a href="#issue">issue</a>
+<li><a href="#issues">issues</a>
 <ul>
 <li><a href="#fatal-remote-error-you-cant-push-to-gitgithubcomtest4581testgit-use-httpsgithubcomtest4581testgit">fatal: remote error: You can&apos;t push to git://github.com/test4581/test.git Use https://github.com/test4581/test.git</a></li>
+<li><a href="#merge-branch-master-of">Merge branch &apos;master&apos; of ...</a></li>
 </ul>
 </li>
 </ul>
@@ -306,6 +372,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 <h1 class="mume-header" id="github%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">Github&#x4F7F;&#x7528;&#x6559;&#x7A0B;</h1>
 
+<p>&#x5F3A;&#x70C8;&#x63A8;&#x8350;<a href="https://git-scm.com/book/zh/v2">Git Documentations</a></p>
 <h2 class="mume-header" id="%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4">&#x57FA;&#x672C;&#x6307;&#x4EE4;</h2>
 
 <h3 class="mume-header" id="%E5%AF%B9%E7%8E%B0%E6%9C%89%E7%9A%84%E6%9F%90%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86-git-init">&#x5BF9;&#x73B0;&#x6709;&#x7684;&#x67D0;&#x4E2A;&#x9879;&#x76EE;&#x7BA1;&#x7406; <code>git init</code></h3>
@@ -360,7 +427,20 @@ git fetch origin [remote branch name]:[local branch name]
 <pre data-role="codeBlock" data-info class="language-"><code>git push origin :&lt;remote branch name&gt;
 </code></pre><p>Rename branch</p>
 <pre data-role="codeBlock" data-info class="language-"><code>git branch -m [old_branch_name] [new_branch_name]
-</code></pre><h3 class="mume-header" id="%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4-git-reset">&#x7248;&#x672C;&#x6062;&#x590D;&#x547D;&#x4EE4; <code>git reset</code></h3>
+</code></pre><h3 class="mume-header" id="%E6%B7%BB%E5%8A%A0%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93-git-remote">&#x6DFB;&#x52A0;&#x4E0A;&#x6E38;&#x4ED3;&#x5E93; <code>git remote</code></h3>
+
+<pre data-role="codeBlock" data-info class="language-"><code>git remote add &lt;name&gt; &lt;url&gt;
+</code></pre><h3 class="mume-header" id="%E9%80%89%E6%8B%A9%E9%83%A8%E5%88%86commit-git-cherry-pick">&#x9009;&#x62E9;&#x90E8;&#x5206;commit <code>git cherry-pick</code></h3>
+
+<p><a href="http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html">git cherry-pick &#x6559;&#x7A0B;s</a></p>
+<h3 class="mume-header" id="%E5%88%86%E6%94%AF%E8%A1%8D%E5%90%88-git-rebase">&#x5206;&#x652F;&#x884D;&#x5408; <code>git rebase</code></h3>
+
+<p><a href="https://blog.csdn.net/endlu/article/details/51605861">Git&#x5206;&#x652F;rebase&#x8BE6;&#x89E3;</a></p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x628A;&#x884D;&#x5408;&#x5F53;&#x6210;&#x4E00;&#x79CD;&#x5728;&#x63A8;&#x9001;&#x4E4B;&#x524D;&#x6E05;&#x7406;&#x63D0;&#x4EA4;&#x5386;&#x53F2;&#x7684;&#x624B;&#x6BB5;&#xFF0C;&#x800C;&#x4E14;&#x4EC5;&#x4EC5;&#x884D;&#x5408;&#x90A3;&#x4E9B;&#x5C1A;&#x672A;&#x516C;&#x5F00;&#x7684;&#x63D0;&#x4EA4;&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x6CA1;&#x95EE;&#x9898;&#x3002;&#x5982;&#x679C;&#x884D;&#x5408;&#x90A3;&#x4E9B;&#x5DF2;&#x7ECF;&#x516C;&#x5F00;&#x7684;&#x63D0;&#x4EA4;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x6709;&#x4EBA;&#x57FA;&#x4E8E;&#x8FD9;&#x4E9B;&#x63D0;&#x4EA4;&#x5BF9;&#x8C61;&#x5F00;&#x5C55;&#x4E86;&#x540E;&#x7EED;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x53EB;&#x4EBA;&#x6CAE;&#x4E27;&#x7684;&#x9EBB;&#x70E6;&#x3002;</p>
+</blockquote>
+<p><a href="https://www.jianshu.com/p/f080912c9cc5">&#x5F7B;&#x5E95;&#x641E;&#x61C2;git rebase</a></p>
+<h3 class="mume-header" id="%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E5%91%BD%E4%BB%A4-git-reset">&#x7248;&#x672C;&#x6062;&#x590D;&#x547D;&#x4EE4; <code>git reset</code></h3>
 
 <p>&#x4E0D;&#x5C0F;&#x5FC3;git add&#x4E86;&#x4E0D;&#x5E0C;&#x671B;add&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;git reset&#x64A4;&#x56DE;&#x3002;&#x5177;&#x4F53;&#x89C1;&#x9488;&#x5BF9;&#x573A;&#x666F;&#x7684;&#x6559;&#x7A0B;</p>
 <h3 class="mume-header" id="%E6%89%93%E6%A0%87%E7%AD%BE-git-tag">&#x6253;&#x6807;&#x7B7E; <code>git tag</code></h3>
@@ -387,13 +467,15 @@ git fetch origin [remote branch name]:[local branch name]
 git tag -l
 </code></pre><h3 class="mume-header" id="%E6%9A%82%E5%AD%98%E5%BD%93%E5%89%8D%E6%AD%A3%E5%9C%A8%E8%BF%9B%E8%A1%8C%E7%9A%84%E5%B7%A5%E4%BD%9C-git-stashgit-stash-pop">&#x6682;&#x5B58;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x7684;&#x5DE5;&#x4F5C; <code>git stash</code>&amp;<code>git stash pop</code></h3>
 
-<p><a href="http://www.tech126.com/git-reset/">link</a></p>
+<p><span id="git_stash">git stash anchor</span><br>
+<a href="https://www.jianshu.com/p/14afc9916dcb">git stash&#x7684;&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;</a><br>
+<a href="https://www.cnblogs.com/zndxall/archive/2018/09/04/9586088.html">git stash &#x7528;&#x6CD5;&#x603B;&#x7ED3;&#x548C;&#x6CE8;&#x610F;&#x70B9;</a></p>
 <blockquote>
 <p>git stash &#x53EF;&#x7528;&#x6765;&#x6682;&#x5B58;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C; &#x6BD4;&#x5982;&#x60F3;pull &#x6700;&#x65B0;&#x4EE3;&#x7801;&#xFF0C; &#x53C8;&#x4E0D;&#x60F3;&#x52A0;&#x65B0;commit&#xFF0C; &#x6216;&#x8005;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4E3A;&#x4E86;fix &#x4E00;&#x4E2A;&#x7D27;&#x6025;&#x7684;bug,  &#x5148;stash, &#x4F7F;&#x8FD4;&#x56DE;&#x5230;&#x81EA;&#x5DF1;&#x4E0A;&#x4E00;&#x4E2A;commit, &#x6539;&#x5B8C;bug&#x4E4B;&#x540E;&#x518D;stash pop, &#x7EE7;&#x7EED;&#x539F;&#x6765;&#x7684;&#x5DE5;&#x4F5C;&#x3002;</p>
 </blockquote>
 <p>&#x57FA;&#x7840;&#x547D;&#x4EE4;&#xFF1A;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>git stash
-do some work
+&lt;do some work&gt;
 git stash pop
 </code></pre><p>&#x8FDB;&#x9636;&#xFF1A;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>Git stash save &quot;work in progress for foo feature&quot;
@@ -493,6 +575,28 @@ git push origin master
 <li>&#x5728;&#x7F51;&#x9875;&#x7AEF;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x540C;&#x540D;&#x7684;&#x7A7A;&#x767D;&#x4ED3;&#x5E93;</li>
 <li>&#x7136;&#x540E;&#x518D;<code>git push -u origin</code></li>
 </ul>
+<h3 class="mume-header" id="%E4%BB%8E%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC">&#x4ECE;&#x8FDC;&#x7A0B;&#x7684;&#x5206;&#x652F;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;</h3>
+
+<h4 class="mume-header" id="%E4%BD%BF%E7%94%A8git-fetch%E7%84%B6%E5%90%8Emerge">&#x4F7F;&#x7528;<code>git fetch</code>,&#x7136;&#x540E;merge</h4>
+
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x662F;&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7248;&#x672C;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;merge</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git fetch origin master
+git log -p master..origin/master
+git merge origin/master
+</code></pre><p>&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x7684;&#x542B;&#x4E49;&#xFF1A;<br>
+&#x9996;&#x5148;&#x4ECE;&#x8FDC;&#x7A0B;&#x7684;origin&#x7684;master&#x4E3B;&#x5206;&#x652F;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5230;origin/master&#x5206;&#x652F;&#x4E0A;<br>
+&#x7136;&#x540E;&#x6BD4;&#x8F83;&#x672C;&#x5730;&#x7684;master&#x5206;&#x652F;&#x548C;origin/master&#x5206;&#x652F;&#x7684;&#x5DEE;&#x522B;<br>
+&#x6700;&#x540E;&#x8FDB;&#x884C;&#x5408;&#x5E76;</p>
+<p>&#x4E0A;&#x8FF0;&#x8FC7;&#x7A0B;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x66F4;&#x6E05;&#x6670;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git fetch origin master:tmp
+git diff tmp 
+git merge tmp
+</code></pre><p>&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5230;&#x672C;&#x5730;&#x7684;test&#x5206;&#x652F;&#x4E0A;&#x4E4B;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x5408;&#x5E76;</p>
+<h4 class="mume-header" id="%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8git-pull">&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>git pull</code></h4>
+
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x662F;&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7248;&#x672C;&#x5E76;merge&#x5230;&#x672C;&#x5730;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git pull origin master
+</code></pre><p>&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x5176;&#x5B9E;&#x76F8;&#x5F53;&#x4E8E;git fetch &#x548C; git merge&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;git fetch&#x66F4;&#x5B89;&#x5168;&#x4E00;&#x4E9B; &#x56E0;&#x4E3A;&#x5728;merge&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x66F4;&#x65B0;&#x60C5;&#x51B5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x5408;&#x5E76;.</p>
 <h3 class="mume-header" id="github%E4%B8%8Afork%E8%BF%87%E6%9D%A5%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%A6%82%E4%BD%95%E4%B8%8E%E5%8E%9F%E4%BB%93%E5%BA%93%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5">github&#x4E0A;fork&#x8FC7;&#x6765;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x5982;&#x4F55;&#x4E0E;&#x539F;&#x4ED3;&#x5E93;&#x4FDD;&#x6301;&#x540C;&#x6B65;</h3>
 
 <h4 class="mume-header" id="1-%E5%9C%A8github%E7%BD%91%E9%A1%B5%E7%AB%AF%E7%9B%B4%E6%8E%A5pull-request">1. &#x5728;github&#x7F51;&#x9875;&#x7AEF;&#x76F4;&#x63A5;pull request</h4>
@@ -550,29 +654,7 @@ git push -u origin master
 
 <pre data-role="codeBlock" data-info class="language-"><code>git remote add origin https://github.com/lyh458/ConExt.git
 git push -u origin master
-</code></pre><h3 class="mume-header" id="%E4%BB%8E%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%9C%89%E8%BF%99%E6%A0%B72%E4%B8%AA%E5%91%BD%E4%BB%A4">&#x4ECE;&#x8FDC;&#x7A0B;&#x7684;&#x5206;&#x652F;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5230;&#x672C;&#x5730;&#x6709;&#x8FD9;&#x6837;2&#x4E2A;&#x547D;&#x4EE4;</h3>
-
-<ul>
-<li>git fetch&#xFF1A;&#x76F8;&#x5F53;&#x4E8E;&#x662F;&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7248;&#x672C;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;merge</li>
-</ul>
-<pre data-role="codeBlock" data-info class="language-"><code>git fetch origin master
-git log -p master..origin/master
-git merge origin/master
-</code></pre><p>&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x7684;&#x542B;&#x4E49;&#xFF1A;<br>
-&#x9996;&#x5148;&#x4ECE;&#x8FDC;&#x7A0B;&#x7684;origin&#x7684;master&#x4E3B;&#x5206;&#x652F;&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5230;origin/master&#x5206;&#x652F;&#x4E0A;<br>
-&#x7136;&#x540E;&#x6BD4;&#x8F83;&#x672C;&#x5730;&#x7684;master&#x5206;&#x652F;&#x548C;origin/master&#x5206;&#x652F;&#x7684;&#x5DEE;&#x522B;<br>
-&#x6700;&#x540E;&#x8FDB;&#x884C;&#x5408;&#x5E76;</p>
-<p>&#x4E0A;&#x8FF0;&#x8FC7;&#x7A0B;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x66F4;&#x6E05;&#x6670;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>git fetch origin master:tmp
-git diff tmp 
-git merge tmp
-</code></pre><p>&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684;&#x7248;&#x672C;&#x5230;&#x672C;&#x5730;&#x7684;test&#x5206;&#x652F;&#x4E0A;&#x4E4B;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x5408;&#x5E76;</p>
-<ul>
-<li>git pull&#xFF1A;&#x76F8;&#x5F53;&#x4E8E;&#x662F;&#x4ECE;&#x8FDC;&#x7A0B;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7248;&#x672C;&#x5E76;merge&#x5230;&#x672C;&#x5730;</li>
-</ul>
-<pre data-role="codeBlock" data-info class="language-"><code>git pull origin master
-</code></pre><p>&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x5176;&#x5B9E;&#x76F8;&#x5F53;&#x4E8E;git fetch &#x548C; git merge&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;git fetch&#x66F4;&#x5B89;&#x5168;&#x4E00;&#x4E9B; &#x56E0;&#x4E3A;&#x5728;merge&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x66F4;&#x65B0;&#x60C5;&#x51B5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x5408;&#x5E76;.</p>
-<h3 class="mume-header" id="%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E5%B7%B2%E7%BB%8F%E6%8F%90%E4%BA%A4%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84commit">&#x5982;&#x4F55;&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;commit</h3>
+</code></pre><h3 class="mume-header" id="%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E5%B7%B2%E7%BB%8F%E6%8F%90%E4%BA%A4%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84commit">&#x5982;&#x4F55;&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;commit</h3>
 
 <ul>
 <li>&#x67E5;&#x770B;Git&#x63D0;&#x4EA4;&#x8BB0;&#x5F55;</li>
@@ -586,76 +668,421 @@ git merge tmp
 <li>&#x5C06;&#x5F53;&#x524D;&#x6307;&#x5411;&#x7684;head&#x63A8;&#x5230;git</li>
 </ul>
 <pre data-role="codeBlock" data-info="git" class="language-git">git push origin HEAD --force
-</pre><h3 class="mume-header" id="%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E7%9A%84%E5%90%84%E7%A7%8D%E5%9C%BA%E6%99%AF">&#x7248;&#x672C;&#x6062;&#x590D;&#x7684;&#x5404;&#x79CD;&#x573A;&#x666F;</h3>
+</pre><h3 class="mume-header" id="%E5%8F%AApull-request%E9%83%A8%E5%88%86commit%E6%88%96%E8%80%85%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6">&#x53EA;pull request&#x90E8;&#x5206;commit(&#x6216;&#x8005;&#x5206;&#x652F;&#x5408;&#x5E76;)</h3>
 
-<p>&#x4E0D;&#x5C0F;&#x5FC3;<code>git add</code>&#x4E86;&#x4E0D;&#x5E0C;&#x671B;add&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>git reset</code>&#x64A4;&#x56DE;</p>
+<p>pull request&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5206;&#x652F;,&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5206;&#x652F;(&#x4EE5;dev&#x5206;&#x652F;&#x4E3A;&#x4F8B;),&#x9700;&#x8981;pull request&#x7684;&#x4EE3;&#x7801;&#x76F4;&#x63A5;&#x653E;&#x5230;master&#x5206;&#x652F;&#x6216;&#x5176;&#x4ED6;&#x5206;&#x652F;&#xFF08;&#x4EE5;master&#x5206;&#x652F;&#x4E3A;&#x4F8B;&#xFF09;&#x3002;&#x6709;&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<h4 class="mume-header" id="%E5%88%A9%E7%94%A8git-cherry-pick%E5%AE%9E%E7%8E%B0">&#x5229;&#x7528;<code>git cherry-pick</code>&#x5B9E;&#x73B0;</h4>
+
+<p>cherry-pick &#x5C31;&#x662F;&#x6311;&#x9009;&#x4E00;&#x4E2A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684; commit &#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5C06;&#x5728;&#x5176;&#x4ED6;&#x5206;&#x652F;&#x4E0A;&#x7684; commit &#x4FEE;&#x6539;&#xFF0C;&#x79FB;&#x690D;&#x5230;&#x5F53;&#x524D;&#x7684;&#x5206;&#x652F;&#xFF0C;&#x4F46;&#x662F;&#x79FB;&#x690D;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;<strong>&#x65B0;&#x7684;commit&#x8BB0;&#x5F55;</strong>&#xFF0C;&#x5177;&#x4F53;&#x5730;&#xFF1A;</p>
+<p>&#x53C2;&#x8003;&#x81EA;<a href="https://juejin.im/post/6844903648208617485#heading-21">&#x5982;&#x4F55;&#x4F18;&#x96C5;&#x5730;pull request</a></p>
+<ul>
+<li>
+<p>&#x76EE;&#x6807;&#xFF1A;&#x5C06;dev&#x5206;&#x652F;&#x7684;commit1&#x548C;commit2&#x63D0;&#x4EA4;&#x5230;&#x4E0A;&#x6E38;&#x4ED3;&#x5E93;</p>
+</li>
+<li>
+<p>&#x5728;dev&#x5206;&#x4E4B;&#x4E0B;&#xFF0C;&#x67E5;&#x770B;commit1&#x7684;hash&#x503C;&#xFF0C;&#x7136;&#x540E;&#x590D;&#x5236;commit1&#x548C;commit2&#x7684;hash&#x503C;(&#x6216;&#x5206;&#x652F;&#x540D;)</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log
+</code></pre><ul>
+<li>&#x5207;&#x6362;&#x5230;master&#x5206;&#x652F;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkout master
+</code></pre><ul>
+<li>&#x9009;&#x62E9;commit1&#x548C;commit2</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git cherry-pich &lt;commit1_hash&gt; &lt;commit2_hash&gt;
+</code></pre><p>&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;conflict&#xFF0C;<a href="https://blog.csdn.net/armwind/article/details/51746027">&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</a></p>
+<ul>
+<li>push&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git push origin master
+</code></pre><ul>
+<li>&#x7136;&#x540E;&#x5728;&#x7F51;&#x9875;&#x7AEF;&#x63D0;&#x4EA4;PR</li>
+</ul>
+<p>&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x5C06; A &#x548C; B &#x4E24;&#x4E2A;&#x63D0;&#x4EA4;&#x5E94;&#x7528;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;&#x3002;&#x8FD9;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x5206;&#x652F;&#x751F;&#x6210;&#x4E24;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x65B0;&#x63D0;&#x4EA4;&#x3002;<br>
+&#x5982;&#x679C;&#x60F3;&#x8981;&#x8F6C;&#x79FB;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x8FDE;&#x7EED;&#x63D0;&#x4EA4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x7B80;&#x4FBF;&#x8BED;&#x6CD5;&#x3002;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git cherry-pick A..B 
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x8F6C;&#x79FB;&#x4ECE; A &#x5230; B &#x7684;&#x6240;&#x6709;&#x63D0;&#x4EA4;&#x3002;&#x5B83;&#x4EEC;&#x5FC5;&#x987B;&#x6309;&#x7167;&#x6B63;&#x786E;&#x7684;&#x987A;&#x5E8F;&#x653E;&#x7F6E;&#xFF1A;&#x63D0;&#x4EA4; A &#x5FC5;&#x987B;&#x65E9;&#x4E8E;&#x63D0;&#x4EA4; B&#xFF0C;&#x5426;&#x5219;&#x547D;&#x4EE4;&#x5C06;&#x5931;&#x8D25;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x63D0;&#x4EA4; A &#x5C06;&#x4E0D;&#x4F1A;&#x5305;&#x542B;&#x5728; Cherry pick &#x4E2D;&#x3002;&#x5982;&#x679C;&#x8981;&#x5305;&#x542B;&#x63D0;&#x4EA4; A&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x6CD5;&#x3002;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git cherry-pick A^..B 
+</code></pre><h4 class="mume-header" id="%E5%88%A9%E7%94%A8git-rebase%E5%AE%9E%E7%8E%B0">&#x5229;&#x7528;<code>git rebase</code>&#x5B9E;&#x73B0;</h4>
+
+<p>&#x53C2;&#x8003;&#x81EA;<a href="https://www.cnblogs.com/yxhblogs/p/10561879.html">&#x5DE7;&#x7528; git rebase &#x5C06;&#x67D0;&#x4E00;&#x90E8;&#x5206; commit &#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5206;&#x652F;</a><br>
+&#x5728;&#x6211;&#x4EEC;&#x7684;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4F1A;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x5206;&#x652F;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5C06;&#x67D0;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x7684; commit &#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x53BB;&#x3002;<br>
+<img src="https://i.imgur.com/CD1AnDx.png" alt></p>
+<p>&#x5C31;&#x50CF;&#x8FD9;&#x5F20;&#x56FE;&#x6240;&#x63CF;&#x8FF0;&#x7684;&#x8FD9;&#x6837;&#xFF0C;&#x5C06; develop &#x5206;&#x652F;&#x4E2D;&#x7684; C~E &#x90E8;&#x5206;&#x590D;&#x5236;&#x5230; master &#x5206;&#x652F;&#x4E2D;&#x53BB;,&#x5373;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x6700;&#x540E;&#x4E09;&#x4E2A; commit&#xFF0C;&#x590D;&#x5236;&#x5230; master &#x5206;&#x652F;&#x4E0A;&#x53BB;&#x3002;&#x3002;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x7528; git rebase &#x547D;&#x4EE4;&#x6765;&#x5B9E;&#x73B0;&#x4E86;&#x3002;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>// startpoint &#x7B2C;&#x4E00;&#x4E2A; commit id, endpoint &#x6700;&#x540E;&#x4E00;&#x4E2A; commit id&#xFF0C;branchName &#x5C31;&#x662F;&#x76EE;&#x6807;&#x5206;&#x652F;&#x4E86;&#x3002;
+$ git rebase [startpoint] [endpoint] --onto [branchName]
+</code></pre><p>&#x6267;&#x884C; git rebase &#x547D;&#x4EE4;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x5F53;&#x524D;&#x7684; HEAD &#x5904;&#x4E8E;&#x6E38;&#x79BB;&#x72B6;&#x6001;&#x3002;<br>
+&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528; git reset &#x547D;&#x4EE4;&#xFF0C;&#x5C06; master &#x6240;&#x6307;&#x5411;&#x7684; commit id &#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D; HEAD &#x6240;&#x6307;&#x5411;&#x7684; commit id&#x3002;</p>
+<h3 class="mume-header" id="%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF">&#x5408;&#x5E76;&#x5206;&#x652F;</h3>
+
+<p>&#x573A;&#x666F;&#x9700;&#x6C42;&#xFF1A;&#x5C06;test&#x5206;&#x652F;&#x7684;&#x65B0;&#x589E;&#x5185;&#x5BB9;&#x5408;&#x5E76;&#x5230;master&#x5206;&#x652F;(&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x6709;&#x4EA4;&#x53C9;&#x53CA;&#x65E0;&#x4EA4;&#x53C9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;)&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x56DB;&#x79CD;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;<br>
+&#x53C2;&#x8003;&#x81EA;<a href="https://yanhaijing.com/git/2017/07/14/four-method-for-git-merge/">&#x56FE;&#x89E3;4&#x79CD;git&#x5408;&#x5E76;&#x5206;&#x652F;&#x65B9;&#x6CD5;</a></p>
+<h4 class="mume-header" id="%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E6%B2%A1%E6%9C%89%E4%BA%A4%E5%8F%89%E6%97%B6">&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x6CA1;&#x6709;&#x4EA4;&#x53C9;&#x65F6;</h4>
+
+<h5 class="mume-header" id="git-merge%E9%87%87%E7%94%A8fast-forward%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6"><code>git merge</code>&#x91C7;&#x7528;fast-forward&#x5FEB;&#x901F;&#x5408;&#x5E76;</h5>
+
+<p>&#x5F85;&#x5408;&#x5E76;&#x7684;&#x5206;&#x652F;&#x5728;&#x5F53;&#x524D;&#x5206;&#x652F;&#x7684;&#x4E0B;&#x6E38;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6CA1;&#x6709;&#x5206;&#x53C9;&#x65F6;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x5FEB;&#x901F;&#x5408;&#x5E76;&#xFF0C;&#x4ECE;test&#x5206;&#x652F;&#x5207;&#x6362;&#x5230;master&#x5206;&#x652F;&#xFF0C;&#x7136;&#x540E;&#x5408;&#x5E76;test&#x5206;&#x652F;.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkout master
+git merge dev
+</code></pre><p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x76F8;&#x5F53;&#x4E8E;&#x76F4;&#x63A5;&#x628A;master&#x5206;&#x652F;&#x79FB;&#x52A8;&#x5230;test&#x5206;&#x652F;&#x6240;&#x5728;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x79FB;&#x52A8;HEAD&#x6307;&#x9488;&#xFF08;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x65B0;&#x7684;commit&#xFF09;&#x3002;</p>
+<p><img src="http://yanhaijing.com/blog/498.gif" alt><br>
+<img src="https://i.imgur.com/Tlbgfzt.png" alt="fast-forward"></p>
+<h5 class="mume-header" id="%E4%BD%BF%E7%94%A8git-merge-no-ff%E5%BC%BA%E5%88%B6%E9%9D%9E%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6">&#x4F7F;&#x7528;<code>git merge --no-ff</code>&#x5F3A;&#x5236;&#x975E;&#x5FEB;&#x901F;&#x5408;&#x5E76;</h5>
+
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x8981;&#x5FEB;&#x901F;&#x5408;&#x5E76;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x6307;&#x5B9A;&#x4E3A;&#x975E;&#x5FEB;&#x901F;&#x5408;&#x5E76;&#xFF08;&#x751F;&#x6210;&#x65B0;&#x7684;&#x5408;&#x5E76;commit,&#x5373;merge commit&#xFF09;&#xFF0C;&#x53EA;&#x9700;&#x52A0;&#x4E0A;--no-ff&#x53C2;&#x6570;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkout master
+git merge --no-ff dev
+</code></pre><p>&#x8FD9;&#x79CD;&#x5408;&#x5E76;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;master&#x5206;&#x652F;&#x4E0A;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x63D0;&#x4EA4;&#x8282;&#x70B9;&#xFF0C;&#x4ECE;&#x800C;&#x5B8C;&#x6210;&#x5408;&#x5E76;</p>
+<p><img src="https://yanhaijing.com/blog/499.gif" alt><br>
+<img src="https://i.imgur.com/S28uJJl.png" alt="git merge --no-ff"></p>
+<h5 class="mume-header" id="%E4%BD%BF%E7%94%A8git-merge-squash">&#x4F7F;&#x7528;<code>git merge --squash</code></h5>
+
+<p>svn&#x7684;&#x5728;&#x5408;&#x5E76;&#x5206;&#x652F;&#x65F6;&#x91C7;&#x7528;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;squash&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x5206;&#x652F;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x63D0;&#x4EA4;&#x8282;&#x70B9;&#x3002;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkout master
+git merge --squash dev
+</code></pre><p><img src="https://yanhaijing.com/blog/500.gif" alt><br>
+squash&#x548C;no-ff&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x533A;&#x522B;&#x53EA;&#x6709;&#x4E00;&#x70B9;&#x4E0D;&#x4F1A;&#x4FDD;&#x7559;&#x5BF9;&#x5408;&#x5165;&#x5206;&#x652F;&#x7684;&#x5F15;&#x7528;&#xFF08;&#x5BF9;&#x4E8E;&#x6587;&#x4EF6;&#x6765;&#x8BF4;&#xFF0C;&#x5408;&#x5E76;&#x6548;&#x679C;&#x548C;&#x524D;&#x9762;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x6267;&#x884C;<code>git merge --squash</code>&#x540E;&#xFF0C;master&#x5206;&#x652F;&#x5904;&#x4E8E;<code>git add</code>&#x540E;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x9700;&#x8981;&#x518D;&#x6267;&#x884C;<code>git commmit</code>&#xFF0C;&#x800C;&#x524D;&#x9762;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x5C31;&#x5904;&#x4E8E;commit&#x5B8C;&#x6210;&#x72B6;&#x6001;&#xFF09;<br>
+<img src="https://i.imgur.com/N5hJmDb.png" alt="git merge --squash"></p>
+<h5 class="mume-header" id="%E4%BD%BF%E7%94%A8git-rebase">&#x4F7F;&#x7528;<code>git rebase</code></h5>
+
+<p>&#x5728;&#x5206;&#x652F;&#x6CA1;&#x6709;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;&#x91C7;&#x7528;<code>git rebase</code>&#x7684;&#x65B9;&#x5F0F;&#x4E0E;&#x91C7;&#x7528;<code>git merge</code>fast forward&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<h4 class="mume-header" id="%E5%BD%93%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8%E4%BA%A4%E5%8F%89%E6%97%B6">&#x5F53;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;</h4>
+
+<h5 class="mume-header" id="%E4%BD%BF%E7%94%A8git-merge">&#x4F7F;&#x7528;<code>git merge</code></h5>
+
+<h6 class="mume-header" id="%E5%BD%93%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8%E4%BA%A4%E5%8F%89%E6%97%B6%E4%BD%BF%E7%94%A8git-merge%E5%B0%B1%E7%AD%89%E5%90%8C%E4%BA%8Egit-merge-no-ff%E8%80%8C%E4%B8%94%E5%BE%88%E5%A4%A7%E6%9C%BA%E7%8E%87%E4%BC%9A%E5%87%BA%E7%8E%B0merge-conflict">&#x5F53;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>git merge</code>&#x5C31;&#x7B49;&#x540C;&#x4E8E;<code>git merge --no-ff</code>&#xFF0C;&#x800C;&#x4E14;&#x5F88;&#x5927;&#x673A;&#x7387;&#x4F1A;&#x51FA;&#x73B0;merge conflict&#x3002;</h6>
+
+<p><img src="https://i.imgur.com/VhnmGpF.png" alt="&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;git merge&#x4EA7;&#x751F;&#x7684;conflict"></p>
+<ul>
+<li>
+<p>&#x6309;&#x7167;&#x63D0;&#x793A;&#x5B9A;&#x4F4D;&#x5230;&#x51B2;&#x7A81;&#x53D1;&#x751F;&#x7684;&#x6587;&#x4EF6;&#x5E76;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x6240;&#x6709;&#x51B2;&#x7A81;&#x89E3;&#x51B3;&#x5B8C;&#x540E;&#xFF0C;&#x7136;&#x540E;<code>git add .</code><br>
+<img src="https://i.imgur.com/Jbnd7hV.png" alt="&#x4FEE;&#x6539;&#x524D;&#x540E;"></p>
+</li>
+<li>
+<p>&#x518D;<code>git commit</code>&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;merge commit&#x7684;&#x6CE8;&#x91CA;&#x7F16;&#x8F91;&#x7A97;&#x53E3;&#xFF0C;&#x7F16;&#x8F91;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4FDD;&#x5B58;&#x5373;&#x53EF;&#x3002;<br>
+<img src="https://i.imgur.com/gyZvZAo.png" alt="merge conflict&#x6CE8;&#x91CA;&#x7F16;&#x8F91;"></p>
+</li>
+<li>
+<p>&#x67E5;&#x770B;<code>git log</code>&#x4F1A;&#x53D1;&#x73B0;&#x6700;&#x540E;&#x7684;&#x5408;&#x5E76;&#x6548;&#x679C;<br>
+&#x7531;&#x4E8E;git&#x662F;&#x6839;&#x636E;&#x68C0;&#x6D4B;&#x884C;&#x7684;&#x53D8;&#x5316;&#x6765;&#x68C0;&#x6D4B;&#x4ED3;&#x5E93;&#x662F;&#x5426;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x7EC6;&#x5FC3;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;master commit&#x7684;&#x987A;&#x5E8F;&#x4F1A;&#x6839;&#x636E;&#x4FEE;&#x6539;conflict&#x65F6;&#x884C;&#x5185;&#x5BB9;&#x5BF9;&#x5E94;&#x7684;commit&#x53D1;&#x751F;&#x8C03;&#x6574;&#x3002;<br>
+<img src="https://i.imgur.com/iKrtELQ.png" alt="merge&#x6548;&#x679C;"><br>
+<img src="https://i.imgur.com/erT2RYg.png" alt="commit&#x987A;&#x5E8F;&#x53D1;&#x751F;&#x53D8;&#x5316;"></p>
+</li>
+</ul>
+<h6 class="mume-header" id="%E5%BD%93%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%AD%98%E5%9C%A8%E4%BA%A4%E5%8F%89%E6%97%B6%E4%BD%BF%E7%94%A8git-merge-squash">&#x5F53;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>git merge --squash</code></h6>
+
+<p>&#x5F53;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>git merge --squash</code>&#x4E0D;&#x4F1A;&#x5BF9;dev&#x5206;&#x652F;&#x4EA4;&#x53C9;&#x90E8;&#x5206;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x662F;&#x628A;dev&#x7684;&#x4EA4;&#x53C9;&#x90E8;&#x5206;&#x7684;commit&#x6CE8;&#x91CA;&#x5408;&#x5E76;&#x751F;&#x4EA7;&#x4E00;&#x4E2A;&#x65B0;&#x7684;squash&#x6CE8;&#x91CA;&#x3002;<br>
+<img src="https://i.imgur.com/4Mlv9B0.png" alt="squash commit&#x6CE8;&#x91CA;&#x7F16;&#x8F91;&#x7A97;&#x53E3;"></p>
+<p><img src="https://i.imgur.com/eqGnQSS.png" alt="git merge --squash&#x6700;&#x7EC8;&#x6548;&#x679C;"></p>
+<h5 class="mume-header" id="%E4%BD%BF%E7%94%A8git-rebase-1">&#x4F7F;&#x7528;<code>git rebase</code></h5>
+
+<p>rebase&#x4E0E;merge&#x4E0D;&#x540C;&#xFF0C;rebase&#x4F1A;&#x5C06;&#x5408;&#x5165;&#x5206;&#x652F;&#x4E0A;&#x8D85;&#x524D;&#x7684;&#x8282;&#x70B9;&#x5728;&#x5F85;&#x5408;&#x5165;&#x5206;&#x652F;&#x4E0A;&#x91CD;&#x65B0;&#x63D0;&#x4EA4;&#x4E00;&#x904D;&#xFF08;&#x5373;&#x5047;&#x5982;&#x5F53;&#x524D;&#x4F4D;&#x4E8E;dev&#x5206;&#x652F;&#xFF0C;&#x6267;&#x884C;<code>git rebase master</code>&#x540E;&#xFF0C;&#x4F1A;&#x5C06;dev&#x5206;&#x652F;&#x4E0A;&#x8D85;&#x524D;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5728;master&#x4E0A;&#x91CD;&#x65B0;&#x63D0;&#x4EA4;&#x4E00;&#x904D;&#xFF0C;&#x540C;&#x65F6;dev HEAD&#x7684;&#x4F4D;&#x7F6E;&#x4E5F;&#x4F1A;&#x76F8;&#x5E94;&#x53D8;&#x5316;&#xFF09;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF0C;B1 B2&#x4F1A;&#x53D8;&#x4E3A;B1&#x2019; B2&#x2019;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x4F1A;&#x53D8;&#x6210;&#x7EBF;&#x6027;&#x5386;&#x53F2;&#x3002;<br>
+<img src="https://i.imgur.com/kzKXrlt.png" alt="rebase&#x5408;&#x5E76;"></p>
+<p><code>git rebase</code>&#x524D;<br>
+<img src="https://i.imgur.com/vT7n5Tq.png" alt="git rebase&#x524D;"></p>
+<p><code>git rebase master</code>&#x540E;<br>
+<img src="https://i.imgur.com/2jpczlL.png" alt="git rebase&#x540E;"></p>
+<p>&#x5F53;&#x5206;&#x652F;&#x5B58;&#x5728;&#x4EA4;&#x53C9;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>git rebase</code>&#x65F6;&#x4E5F;&#x4F1A;&#x5927;&#x6982;&#x7387;&#x5B58;&#x5728;&#x51B2;&#x7A81;&#xFF0C;&#x800C;&#x4E14;&#x51B2;&#x7A81;&#x5373;&#x4F7F;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4E5F;&#x5F97;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x89E3;&#x51B3;&#x3002;&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li>&#x4FEE;&#x6539;&#x51B2;&#x7A81;&#x90E8;&#x5206;</li>
+<li><code>git add/rm &lt;conflicted_files&gt;</code></li>
+<li><code>git rebase --continue</code></li>
+<li>&#x5982;&#x679C;&#x7B2C;&#x4E09;&#x6B65;&#x65E0;&#x6548;&#x53EF;&#x4EE5;&#x6267;&#x884C;<code>git rebase --skip</code>&#xFF0C;&#x6216;&#x8005;&#x64A4;&#x9500;&#x4FEE;&#x6539;&#x9000;&#x51FA;rebase&#x56DE;&#x5230;&#x539F;&#x6765;&#x72B6;&#x6001;<code>git rebase --abort</code>&#x3002;</li>
+</ul>
+<p><strong>&#xFF01;&#xFF01;&#xFF01;&#x6CE8;&#x610F;<strong><strong>The Golden Rule of Rebasing rebase</strong></strong>git rebase&#x7684;&#x9EC4;&#x91D1;&#x6CD5;&#x5219;</strong>&#xFF1A;&#x4E0D;&#x8981;&#x5728;&#x516C;&#x5F00;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x4F7F;&#x7528;<code>git rebase</code>&#xFF0C;&#x5373;&#x4E00;&#x65E6;&#x5206;&#x652F;&#x4E2D;&#x7684;&#x63D0;&#x4EA4;&#x5BF9;&#x8C61;&#x53D1;&#x5E03;&#x5230;&#x516C;&#x5171;&#x4ED3;&#x5E93;&#xFF0C;&#x5C31;&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x5BF9;&#x8BE5;&#x5206;&#x652F;&#x8FDB;&#x884C;&#x884D;&#x5408;&#x64CD;&#x4F5C;&#x3002;<br>
+&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF1A;&#x4E00;&#x65E6;&#x4F60;&#x7684;commit&#x5DF2;&#x7ECF;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x5176;&#x4ED6;&#x4EBA;&#x5DF2;&#x7ECF;fork&#x53BB;&#x4F7F;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4E0D;&#x8981;&#x5BF9;&#x8FD9;&#x4E9B;commit&#x6267;&#x884C;<code>git rebase</code>&#x64CD;&#x4F5C;&#x4E86;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#x81EA;<a href="https://blog.csdn.net/endlu/article/details/51605861">Git&#x5206;&#x652F;Rebase&#x8BE6;&#x89E3;</a><br>
+<a href="#git_rebase_withdraw">git rebase&#x6210;&#x529F;&#x540E;&#x5982;&#x4F55;&#x64A4;&#x9500;</a></p>
+<h4 class="mume-header" id="%E4%BD%BF%E7%94%A8git-cherry-pick">&#x4F7F;&#x7528;<code>git cherry-pick</code></h4>
+
+<p><code>git cherry-pick</code>&#x7ED9;&#x4F60;&#x81EA;&#x7531;&#xFF0C;&#x60F3;&#x628A;&#x90A3;&#x4E2A;&#x8282;&#x70B9;merge&#x8FC7;&#x6765;&#x5C31;&#x628A;&#x90A3;&#x4E2A;&#x8282;&#x70B9;merge&#x8FC7;&#x6765;&#xFF0C;&#x5176;&#x5408;&#x5165;&#x7684;&#x4E0D;&#x662F;&#x5206;&#x652F;&#x800C;&#x662F;&#x63D0;&#x4EA4;&#x8282;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x9002;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x3002;</p>
+<h4 class="mume-header" id="%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94">&#x4F18;&#x7F3A;&#x70B9;&#x5BF9;&#x6BD4;</h4>
+
+<p>merge&#x7ED3;&#x679C;&#x80FD;&#x591F;&#x4F53;&#x73B0;&#x51FA;&#x65F6;&#x95F4;&#x7EBF;&#xFF0C;&#x4F46;&#x662F;rebase&#x4F1A;&#x6253;&#x4E71;&#x65F6;&#x95F4;&#x7EBF;&#xFF1B;rebase&#x770B;&#x8D77;&#x6765;&#x7B80;&#x6D01;&#xFF0C;&#x4F46;&#x662F;merge&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x592A;&#x7B80;&#x6D01;</p>
+<h5 class="mume-header" id="git-merge"><code>git merge</code></h5>
+
+<ul>
+<li>marge &#x7279;&#x70B9;&#xFF1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;commit&#xFF0C;&#x5982;&#x679C;&#x5408;&#x5E76;&#x7684;&#x65F6;&#x5019;&#x9047;&#x5230;&#x51B2;&#x7A81;&#xFF0C;&#x4EC5;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x540E;&#x91CD;&#x65B0;commit</li>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x8BB0;&#x5F55;&#x4E86;&#x771F;&#x5B9E;&#x7684;commit&#x60C5;&#x51B5;&#xFF0C;&#x5305;&#x62EC;&#x6BCF;&#x4E2A;&#x5206;&#x652F;&#x7684;&#x8BE6;&#x60C5;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x56E0;&#x4E3A;&#x6BCF;&#x6B21;merge&#x4F1A;&#x81EA;&#x52A8;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;merge commit&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;git &#x7684;GUI tools&#xFF0C;&#x7279;&#x522B;&#x662F;commit&#x6BD4;&#x8F83;&#x9891;&#x7E41;&#x65F6;&#xFF0C;&#x770B;&#x5230;&#x5206;&#x652F;&#x5F88;&#x6742;&#x4E71;&#x3002;</li>
+</ul>
+<h5 class="mume-header" id="git-rebase"><code>git rebase</code></h5>
+
+<ul>
+<li>rebase &#x7279;&#x70B9;&#xFF1A;&#x4F1A;&#x5408;&#x5E76;&#x4E4B;&#x524D;&#x7684;commit&#x5386;&#x53F2;</li>
+</ul>
+<ul>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x5F97;&#x5230;&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x9879;&#x76EE;&#x5386;&#x53F2;&#xFF0C;&#x53BB;&#x6389;&#x4E86;merge commit</li>
+</ul>
+<ul>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x5982;&#x679C;&#x5408;&#x5E76;&#x51FA;&#x73B0;&#x4EE3;&#x7801;&#x95EE;&#x9898;&#x4E0D;&#x5BB9;&#x6613;&#x5B9A;&#x4F4D;&#xFF0C;&#x56E0;&#x4E3A;re-write&#x4E86;history</li>
+</ul>
+<h3 class="mume-header" id="%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAcommit">&#x5408;&#x5E76;&#x591A;&#x4E2A;commit</h3>
+
+<p>&#x53C2;&#x8003;<a href="https://segmentfault.com/a/1190000007748862">(Git)&#x5408;&#x5E76;&#x591A;&#x4E2A;commit</a><br>
+<a href="https://www.jianshu.com/p/f080912c9cc5">&#x5F7B;&#x5E95;&#x641E;&#x61C2;Git Rebase</a><br>
+&#x4F7F;&#x7528; Git &#x4F5C;&#x4E3A;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x7531;&#x4E8E;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x539F;&#x56E0;&#x63D0;&#x4EA4;&#x4E86;&#x8BB8;&#x591A;&#x4E34;&#x65F6;&#x7684; commit&#xFF0C;&#x800C;&#x8FD9;&#x4E9B; commit &#x62FC;&#x63A5;&#x8D77;&#x6765;&#x624D;&#x662F;&#x5B8C;&#x6574;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x9020;&#x6210;&#x95EE;&#x9898;&#xFF1A;<br>
+&#x4E0D;&#x5229;&#x4E8E;&#x4EE3;&#x7801; review&#xFF1B;&#x4F1A;&#x9020;&#x6210;&#x5206;&#x652F;&#x6C61;&#x67D3;&#x3002;&#x4F7F;&#x7528;<code>git rebase</code>&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<ul>
+<li>&#x83B7;&#x53D6;commit ID</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log
+</code></pre><ul>
+<li>&#x5047;&#x5982;&#x9700;&#x8981;&#x5408;&#x5E76;&#x4ECE;HEAD&#x7248;&#x672C;&#x5F80;&#x524D;&#x7684;3&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x4F7F;&#x7528;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git rebase -i HEAD~3
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;&#x6267;&#x884C;&#x8BE5;&#x547D;&#x4EE4;&#x6240;&#x5F97;&#x7684;&#x6392;&#x5217;&#xFF08;&#x4ECE;&#x65E7;&#x5230;&#x65B0;&#xFF09;&#x4E0E;<code>git log</code>&#x7684;&#x6392;&#x5217;&#xFF08;&#x4ECE;&#x65B0;&#x5230;&#x65E7;&#xFF09;&#x76F8;&#x53CD;</p>
+<ul>
+<li>&#x5047;&#x5982;&#x9700;&#x8981;&#x5408;&#x5E76;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF08;&#x5982;3a4226b&#xFF09;&#x5F80;&#x540E;&#x7684;&#x5176;&#x4ED6;&#x7248;&#x672C;&#xFF08;&#x4E0D;&#x5305;&#x542B;3a4226b,&#x4E14;&#x6BD4;&#x5B83;&#x65B0;&#x7684;&#x7248;&#x672C;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git rebase -i 3a4226b
+</code></pre><ul>
+<li>
+<p>&#x7136;&#x540E;&#x6839;&#x636E;&#x63D0;&#x793A;&#x4FEE;&#x6539;&#xFF08;&#x4E00;&#x822C;&#x4FDD;&#x7559;&#x6700;&#x524D;&#x9762;&#x7684;&#x90A3;&#x4E00;&#x4E2A;&#x4E3A;pick&#xFF0C;&#x5176;&#x4ED6;&#x90FD;&#x6539;&#x4E3A;squash&#xFF09;&#xFF0C;<code>wq</code>&#x6216;&#x8005;<code>x</code>&#x4FDD;&#x5B58;&#x9000;&#x51FA;&#x3002;</p>
+</li>
+<li>
+<p>&#x4FEE;&#x6539;&#x6CE8;&#x91CA;&#xFF0C;&#x4FDD;&#x5B58;&#x9000;&#x51FA;&#x3002;<br>
+Git&#x4F1A;&#x538B;&#x7F29;&#x63D0;&#x4EA4;&#x5386;&#x53F2;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x5019;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x4FDD;&#x7559;&#x6700;&#x65B0;&#x7684;&#x5386;&#x53F2;&#xFF0C;&#x4E0D;&#x7136;&#x6211;&#x4EEC;&#x7684;&#x4FEE;&#x6539;&#x5C31;&#x4E22;&#x5F03;&#x4E86;&#x3002;&#x4FEE;&#x6539;&#x4EE5;&#x540E;&#x8981;&#x8BB0;&#x5F97;&#x6572;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git add &lt;conflict_files&gt;
+git rebase --continue
+</code></pre></li>
+<li>
+<p>&#x63A8;&#x9001;&#x8986;&#x76D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git push --force
+</code></pre><ul>
+<li>&#x5982;&#x679C;&#x5E0C;&#x671B;&#x5408;&#x5E76;&#x4E0D;&#x76F8;&#x90BB;&#x7684;commit&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>git rebase -i &lt;commit ID&gt;</code>&#x5148;&#x8C03;&#x6574;&#x987A;&#x5E8F;&#xFF0C;&#x518D;&#x6309;&#x7167;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x5408;&#x5E76;&#x3002;&#x53C2;&#x89C1;<a href="https://www.softwhy.com/article-8639-1.html">Git&#x8C03;&#x6574;commit&#x4E4B;&#x95F4;&#x987A;&#x5E8F;</a></li>
+</ul>
+<h3 class="mume-header" id="%E4%BF%AE%E6%94%B9commit%E6%B3%A8%E9%87%8A">&#x4FEE;&#x6539;commit&#x6CE8;&#x91CA;</h3>
+
+<h4 class="mume-header" id="%E5%8F%AA%E4%BF%AE%E6%94%B9%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84commit%E6%B3%A8%E9%87%8A">&#x53EA;&#x4FEE;&#x6539;&#x4E0A;&#x4E00;&#x6B21;&#x7684;commit&#x6CE8;&#x91CA;</h4>
+
+<p>&#x4F7F;&#x7528;<code>git commmit --amend</code>&#x6307;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x76F4;&#x63A5;&#x7F16;&#x8F91;&#x6CE8;&#x91CA;&#xFF0C;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#xFF0C;&#x6700;&#x540E;<code>git push -f</code>&#x3002;</p>
+<h4 class="mume-header" id="%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%B3%A8%E9%87%8A">&#x4FEE;&#x6539;&#x5386;&#x53F2;commit&#x6CE8;&#x91CA;</h4>
+
+<p>&#x5047;&#x8BBE;&#x8981;&#x4FEE;&#x6539;&#x5012;&#x6570;&#x7B2C;&#x4E09;&#x6761;commit&#x7684;&#x6CE8;&#x91CA;</p>
+<ul>
+<li>&#x6267;&#x884C; git &#x547D;&#x4EE4;, &#x4FEE;&#x6539;&#x8FD1;&#x4E09;&#x6B21;&#x7684;&#x4FE1;&#x606F;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git rebase -i HEAD~3
+</code></pre><ul>
+<li>
+<p>&#x5C06;&#x8BE5;&#x6761;&#x4FE1;&#x606F;&#xFF08;&#x56E0;&#x4E3A;&#x4E0E;<code>git log</code>&#x7684;&#x6392;&#x5217;&#x76F8;&#x53CD;&#xFF0C;&#x6240;&#x4EE5;&#x6B64;&#x65F6;&#x8BE5;&#x6761;commit&#x5E94;&#x8BE5;&#x662F;&#x4F4D;&#x4E8E;&#x7B2C;&#x4E00;&#x4F4D;&#xFF09;&#x524D;&#x7684;<code>pick</code>&#x6539;&#x4E3A;<code>edit</code>&#x6216;&#x8005;<code>e</code>&#xFF0C;&#x4FDD;&#x5B58;&#x9000;&#x51FA;&#x3002;</p>
+</li>
+<li>
+<p>&#x4FEE;&#x6539;&#x6539;&#x6761;commit&#x7684;&#x6CE8;&#x91CA;,&#x4FDD;&#x5B58;&#x9000;&#x51FA;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git rebase --amend
+</code></pre><ul>
+<li>&#x6267;&#x884C;&#x7EE7;&#x7EED;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git rebase --continue
+</code></pre><ul>
+<li>&#x6700;&#x540E;&#x5F3A;&#x5236;push</li>
+</ul>
+<h3 class="mume-header" id="git-rebase%E6%88%90%E5%8A%9F%E5%90%8E%E5%A6%82%E4%BD%95%E6%92%A4%E9%94%80"><code>git rebase</code>&#x6210;&#x529F;&#x540E;&#x5982;&#x4F55;&#x64A4;&#x9500;</h3>
+
+<p><span id="git_rebase_withdraw"> anchor: git rebase&#x6210;&#x529F;&#x540E;&#x5982;&#x4F55;&#x64A4;&#x9500;</span><br>
+&#x53C2;&#x8003;&#x81EA;<a href="https://blog.csdn.net/chengde6896383/article/details/83418488">git rebase &#x6210;&#x529F;&#x4E4B;&#x540E;&#x5982;&#x4F55;&#x64A4;&#x9500;</a><br>
+git rebase &#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;git --abort/--continue&#x6765;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x5982;&#x4F55;&#x64A4;&#x9500;&#x5462;&#xFF1F;</p>
+<ul>
+<li>
+<p>&#x9996;&#x5148;&#x6267;&#x884C;<code>git reflog</code>&#x67E5;&#x770B;&#x672C;&#x5730;&#x8BB0;&#x5F55;&#xFF0C;&#x627E;&#x5230;rebase&#x524D;&#x7684;commit ID</p>
+</li>
+<li>
+<p>&#x7136;&#x540E;&#x6267;&#x884C;``git reset --hard <commit id></commit></p>
+</li>
+</ul>
+<h3 class="mume-header" id="git-log%E8%BF%87%E6%BB%A4merge%E4%BF%A1%E6%81%AF"><code>git log</code>&#x8FC7;&#x6EE4;Merge&#x4FE1;&#x606F;</h3>
+
+<p>&#x53C2;&#x8003;<a href="https://www.jianshu.com/p/11e30cf91ccb">git log &#x8FC7;&#x6EE4;Merge&#x4FE1;&#x606F;</a><br>
+git log&#x8F93;&#x51FA;&#x5305;&#x542B;merge&#x4FE1;&#x606F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5F00;&#x53D1;&#x7EC4;&#x603B;&#x662F;&#x628A;&#x4E0A;&#x6E38;&#x5206;&#x652F;&#x91CC;&#x7684;&#x66F4;&#x65B0;mege&#x5230;feature&#x5206;&#x652F;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C06;feature&#x5206;&#x652F;rebase&#x5230;&#x4E0A;&#x6E38;&#x5206;&#x652F;&#xFF0C;&#x5C31;&#x4F1A;&#x5728;&#x4EE3;&#x7801;&#x5E93;&#x4E2D;&#x770B;&#x5230;&#x975E;&#x5E38;&#x591A;&#x7684;merge&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x4F7F;&#x7528;--no-merges&#x6765;&#x8FC7;&#x6EE4;&#x6389;&#x8FD9;&#x4E2A;merge&#x4FE1;&#x606F;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log --no-merges
+</code></pre><ul>
+<li>&#x7EDF;&#x8BA1;merge&#x5728;log&#x4E2D;&#x7684;&#x603B;&#x6570;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log --merges |grep &apos;Merge branch&apos;|wc -l
+</code></pre><ul>
+<li>&#x67E5;&#x770B;&#x672C;&#x5730;&#x8BB0;&#x5F55;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reflog
+</code></pre><h3 class="mume-header" id="%E5%88%A9%E7%94%A8git-stash%E6%9A%82%E5%AD%98%E6%9C%AAcommit%E7%9A%84%E4%BF%AE%E6%94%B9">&#x5229;&#x7528;<code>git stash</code>&#x6682;&#x5B58;&#x672A;commit&#x7684;&#x4FEE;&#x6539;</h3>
+
+<p>&#x573A;&#x666F;&#x9700;&#x6C42;&#xFF1A;&#x5F53;&#x4F60;&#x7684;&#x5F00;&#x53D1;&#x8FDB;&#x884C;&#x5230;&#x4E00;&#x534A;&#xFF0C;&#x4F46;&#x662F;&#x4EE3;&#x7801;&#x8FD8;&#x4E0D;&#x60F3;&#x8FDB;&#x884C;&#x63D0;&#x4EA4;&#xFF0C;&#x7136;&#x540E;&#x9700;&#x8981;&#x540C;&#x6B65;&#x53BB;&#x5173;&#x8054;&#x8FDC;&#x7AEF;&#x4EE3;&#x7801;&#x65F6;&#x3002;&#x5982;&#x679C;&#x4F60;&#x672C;&#x5730;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x8FDC;&#x7AEF;&#x4EE3;&#x7801;&#x6CA1;&#x6709;&#x51B2;&#x7A81;&#x65F6;&#x3002;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;git pull&#x89E3;&#x51B3;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#x600E;&#x4E48;&#x529E;.&#x76F4;&#x63A5;git pull&#x4F1A;&#x62D2;&#x7EDD;&#x8986;&#x76D6;&#x5F53;&#x524D;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x4F7F;&#x7528;<code>git stash</code>&#x6682;&#x5B58;&#x672C;&#x5730;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;<code>git pull</code>&#xFF0C;&#x6700;&#x540E;&#x4F7F;&#x7528;<code>git stash pop</code>&#x53D6;&#x56DE;&#x6682;&#x5B58;&#x7684;&#x4EE3;&#x7801;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git stash
+git pull
+git stash pop
+</code></pre><p><code>git stash</code>&#x8BE6;&#x7EC6;&#x7528;&#x6CD5;&#x53C2;&#x89C1;<a href="#git_stash">git stash anchor</a></p>
+<p>&#x5F53;&#x672C;&#x5730;&#xFF08;&#x5DF2;&#x7ECF;commit&#xFF09;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x90FD;&#x505A;&#x4E86;&#x4E0D;&#x540C;&#x4FEE;&#x6539;&#xFF0C;&#x5982;&#x4F55;pull&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x5185;&#x5BB9;&#xFF1F;&#x53C2;&#x8003;<a href="#git_pull_rebase">git pull --rebase</a></p>
+<h3 class="mume-header" id="%E4%BD%BF%E7%94%A8git-pull-rebase%E5%AE%9E%E7%8E%B0%E5%BD%93%E6%9C%AC%E5%9C%B0%E5%B7%B2%E7%BB%8Fcommit%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E9%83%BD%E5%81%9A%E4%BA%86%E4%B8%8D%E5%90%8C%E4%BF%AE%E6%94%B9pull%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E5%86%85%E5%AE%B9">&#x4F7F;&#x7528;<code>git pull --rebase</code>&#x5B9E;&#x73B0;&#x5F53;&#x672C;&#x5730;&#xFF08;&#x5DF2;&#x7ECF;commit&#xFF09;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x90FD;&#x505A;&#x4E86;&#x4E0D;&#x540C;&#x4FEE;&#x6539;&#xFF0C;pull&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x5185;&#x5BB9;</h3>
+
+<p><span id="git_pull_rebase"> anchor: git pull --rebase</span><br>
+&#x573A;&#x666F;&#x9700;&#x6C42;&#xFF1A;&#x5F53;&#x672C;&#x5730;&#xFF08;&#x5DF2;&#x7ECF;commit&#xFF09;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x90FD;&#x505A;&#x4E86;&#x4E0D;&#x540C;&#x4FEE;&#x6539;&#xFF0C;&#x6B64;&#x65F6;&#x5982;&#x679C;&#x60F3;push&#x672C;&#x5730;&#x7684;&#x4FEE;&#x6539;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x4F1A;&#x88AB;rejected&#x3002;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x5148;pull&#xFF0C;&#x7136;&#x540E;&#x4FBF;&#x53EF;&#x4EE5;&#x6210;&#x529F;push&#x3002;&#x4F46;&#x662F;&#x5F80;&#x5F80;&#x4F1A;&#x51FA;&#x73B0;<a href="#Merge_branch_master_of">Merge branch &apos;master&apos; of ...</a>&#x7684;&#x95EE;&#x9898;&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git pull --rebase
+</code></pre><p>&#x5982;&#x679C;pull&#x4E0D;&#x4EA7;&#x751F;&#x51B2;&#x7A81;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;rebase&#xFF0C;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x5206;&#x652F;&#x5408;&#x5E76;&#x64CD;&#x4F5C;&#xFF1B;&#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#x5219;&#x9700;&#x8981;&#x624B;&#x52A8;fix&#x540E;&#xFF0C;&#x81EA;&#x884C;&#x5408;&#x5E76;&#x3002;&#x53C2;&#x8003;<a href="https://www.cnblogs.com/Sinte-Beuve/p/9195018.html">Git push &#x65F6;&#x5982;&#x4F55;&#x907F;&#x514D;&#x51FA;&#x73B0; &quot;Merge branch &apos;master&apos; of ...&quot;</a></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/73f13d2725a8">git log&#x9AD8;&#x9636;&#x7528;&#x6CD5;</a></li>
+</ul>
+<h3 class="mume-header" id="%E7%89%88%E6%9C%AC%E6%81%A2%E5%A4%8D%E7%9A%84%E5%90%84%E7%A7%8D%E5%9C%BA%E6%99%AF">&#x7248;&#x672C;&#x6062;&#x590D;&#x7684;&#x5404;&#x79CD;&#x573A;&#x666F;</h3>
+
+<p><code>git add</code>&#x6216;&#x8005;<code>git commit</code>&#x6216;&#x8005;push&#x4E86;&#x4E0D;&#x5E0C;&#x671B;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F8;&#x5E94;&#x6307;&#x4EE4;&#x6062;&#x590D;&#x3002;<br>
+&#x53C2;&#x8003;&#x81EA;<a href="https://www.jianshu.com/p/c0f7e4ac14c7">git&#x653E;&#x5F03;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x4FEE;&#x6539;</a></p>
+<h4 class="mume-header" id="%E6%9C%AA%E4%BD%BF%E7%94%A8git-add%E7%BC%93%E5%AD%98%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8git-checkout%E6%94%BE%E5%BC%83%E4%BF%AE%E6%94%B9">&#x672A;&#x4F7F;&#x7528;<code>git add</code>&#x7F13;&#x5B58;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528;<code>git checkout</code>&#x653E;&#x5F03;&#x4FEE;&#x6539;</h4>
+
+<ul>
+<li>&#x653E;&#x5F03;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x4FEE;&#x6539;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkou -- &lt;filename&gt;
+</code></pre><ul>
+<li>&#x653E;&#x5F03;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkout .
+</code></pre><p>&#x6216;&#x8005;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkout -f
+</code></pre><p>&#x6B64;&#x65F6;&#x4F60;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x88AB;&#x6062;&#x590D;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x88AB;&#x5220;&#x9664;</p>
+<ul>
+<li>&#x653E;&#x5F03;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x4FEE;&#x6539;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git checkout &lt;directory&gt;
+</code></pre><p>&#x6B64;&#x65F6;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x88AB;&#x6062;&#x590D;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x6587;&#x4EF6;&#x4E0D;&#x4F1A;&#x88AB;&#x5220;&#x9664;</p>
+<h4 class="mume-header" id="%E5%B7%B2%E4%BD%BF%E7%94%A8git-add%E7%BC%93%E5%AD%98%E4%BB%A3%E7%A0%81%E6%9C%AA%E4%BD%BF%E7%94%A8git-commit">&#x5DF2;&#x4F7F;&#x7528;<code>git add</code>&#x7F13;&#x5B58;&#x4EE3;&#x7801;&#xFF0C;&#x672A;&#x4F7F;&#x7528;<code>git commit</code></h4>
+
+<ul>
+<li>&#x653E;&#x5F03;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x4FEE;&#x6539;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset HEAD &lt;filename&gt;
+</code></pre><ul>
+<li>&#x653E;&#x5F03;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset HEAD
+</code></pre><p>&#x6B64;&#x547D;&#x4EE4;&#x7528;&#x6765;&#x6E05;&#x9664; git &#x5BF9;&#x4E8E;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x7684;&#x7F13;&#x5B58;&#x3002;&#x76F8;&#x5F53;&#x4E8E;&#x64A4;&#x9500; git add &#x547D;&#x4EE4;&#x6240;&#x5728;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x672C;&#x547D;&#x4EE4;&#x540E;&#xFF0C;&#x672C;&#x5730;&#x7684;&#x4FEE;&#x6539;&#x5E76;&#x4E0D;&#x4F1A;&#x6D88;&#x5931;&#xFF0C;&#x800C;&#x662F;&#x56DE;&#x5230;&#x4E86;&#x7B2C;&#x4E00;&#x6B65;1. &#x672A;&#x4F7F;&#x7528;git add &#x7F13;&#x5B58;&#x4EE3;&#x7801;&#xFF0C;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x7528;<code>git checkout -- &lt;filename&gt;</code>&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x653E;&#x5F03;&#x672C;&#x5730;&#x4FEE;&#x6539;</p>
+<h4 class="mume-header" id="%E5%B7%B2%E7%BB%8F%E7%94%A8git-commit%E6%8F%90%E4%BA%A4%E4%BA%86%E4%BB%A3%E7%A0%81">&#x5DF2;&#x7ECF;&#x7528;<code>git commit</code>&#x63D0;&#x4EA4;&#x4E86;&#x4EE3;&#x7801;</h4>
+
+<ul>
+<li>&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x6B21;commit&#x7684;&#x72B6;&#x6001;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset --hard HEAD^
+</code></pre><ul>
+<li>&#x56DE;&#x9000;&#x5230;&#x4EFB;&#x610F;&#x7248;&#x672C;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset --hard &lt;commitID&gt;
+</code></pre><h4 class="mume-header" id="git-clean%E6%94%BE%E5%BC%83%E6%96%B0%E6%B7%BB%E5%8A%A0%E7%9A%84%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9"><code>git clean</code>&#x653E;&#x5F03;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;</h4>
+
+<ul>
+<li>&#x653E;&#x5F03; &#x4ED3;&#x5E93;&#x6240;&#x6709; &#x6DFB;&#x52A0;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git clean &#x2013;df
+</code></pre><p>&#x6B64;&#x65F6;&#x8BE5;&#x4ED3;&#x5E93;&#x4E0B;&#x6240;&#x6709;&#x65B0;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5C06;&#x88AB;&#x6E05;&#x9664;, &#x4E0D;&#x4F1A;&#x5BF9;&#x5DF2;&#x4FEE;&#x6539;&#x548C;&#x5DF2;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x505A;&#x4EFB;&#x4F55;&#x5904;&#x7406;</p>
+<ul>
+<li>&#x653E;&#x5F03; &#x6307;&#x5B9A;&#x6587;&#x4EF6; &#x6DFB;&#x52A0;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git clean &lt;filename&gt; &#x2013;df
+</code></pre><p>&#x6B64;&#x65F6;&#x8BE5;&#x65B0;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5C06;&#x88AB;&#x6E05;&#x9664;, &#x4E0D;&#x4F1A;&#x5BF9;&#x5DF2;&#x4FEE;&#x6539;&#x548C;&#x5DF2;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x505A;&#x4EFB;&#x4F55;&#x5904;&#x7406;</p>
+<ul>
+<li>&#x653E;&#x5F03; &#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x5939; &#x6DFB;&#x52A0;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git clean &lt;directory&gt; &#x2013;df
+</code></pre><p>&#x6B64;&#x65F6;&#x8BE5;&#x76EE;&#x5F55;&#x65B0;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5C06;&#x88AB;&#x6E05;&#x9664;, &#x4E0D;&#x4F1A;&#x5BF9;&#x5DF2;&#x4FEE;&#x6539;&#x548C;&#x5DF2;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x505A;&#x4EFB;&#x4F55;&#x5904;&#x7406;</p>
+<ul>
+<li>&#x5176;&#x4ED6;</li>
+</ul>
 <blockquote>
+<p>&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;&#xFF1A;.gitignore &#x4E2D;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;&#xFF1B;<br>
+&#x672A;&#x88AB;&#x8DDF;&#x8E2A;&#x7684;&#x6587;&#x4EF6;&#xFF1A;&#x6CA1;&#x6709;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x6CA1; git add &#x7684;&#x6587;&#x4EF6;</p>
+</blockquote>
+<pre data-role="codeBlock" data-info class="language-"><code>git clean  -f             # &#x5220;&#x9664;&#xFF1A;&#x672A;&#x88AB;&#x8DDF;&#x8E2A;&#x7684;&#x6587;&#x4EF6;
+git clean &#x2013;fd             # &#x5220;&#x9664;&#xFF1A;&#x672A;&#x88AB;&#x8DDF;&#x8E2A;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;
+git clean &#x2013;xfd            # &#x5220;&#x9664;&#xFF1A;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;&#x3001;&#x672A;&#x88AB;&#x8DDF;&#x8E2A;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;
+git clean [-xfd] -n-n     # &#x4F1A;&#x5148;&#x6253;&#x5370;&#x4E00;&#x4E9B;&#x5C06;&#x8981;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E0D;&#x6267;&#x884C;&#x5220;&#x9664;&#x52A8;&#x4F5C;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x67E5;&#x770B;&#x662F;&#x5426;&#x6709;&#x81EA;&#x5DF1;&#x9700;&#x8981;&#x7684;&#x4E0D;&#x60F3;&#x88AB;&#x5220;&#x9664;
+</code></pre><h4 class="mume-header" id="%E6%9B%B4%E5%A4%9Agit-reset%E7%9A%84%E7%94%A8%E6%B3%95">&#x66F4;&#x591A;<code>git reset</code>&#x7684;&#x7528;&#x6CD5;</h4>
+
 <p>reset&#x547D;&#x4EE4;&#x6709;3&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<blockquote>
+<p>1&#xFF1A;<strong>git reset --mixed&#xFF1A;</strong> &#x6B64;&#x4E3A;&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x5E26;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x7684;git reset&#xFF0C;&#x5373;&#x65F6;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x6E90;&#x7801;&#xFF0C;&#x56DE;&#x9000;commit&#x548C;index&#x4FE1;&#x606F;</p>
 </blockquote>
 <blockquote>
-<p>1&#xFF1A;<strong>git reset &#x2013;mixed&#xFF1A;</strong> &#x6B64;&#x4E3A;&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x5E26;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#x7684;git reset&#xFF0C;&#x5373;&#x65F6;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x6E90;&#x7801;&#xFF0C;&#x56DE;&#x9000;commit&#x548C;index&#x4FE1;&#x606F;</p>
+<p>2&#xFF1A;<strong>git reset --soft&#xFF1A;</strong> &#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x53EA;&#x56DE;&#x9000;&#x4E86;commit&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4E0D;&#x4F1A;&#x6062;&#x590D;&#x5230;index file&#x4E00;&#x7EA7;&#x3002;&#x5982;&#x679C;&#x8FD8;&#x8981;&#x63D0;&#x4EA4;&#xFF0C;&#x76F4;&#x63A5;commit&#x5373;&#x53EF;</p>
 </blockquote>
 <blockquote>
-<p>2&#xFF1A;<strong>git reset &#x2013;soft&#xFF1A;</strong> &#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x53EA;&#x56DE;&#x9000;&#x4E86;commit&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4E0D;&#x4F1A;&#x6062;&#x590D;&#x5230;index file&#x4E00;&#x7EA7;&#x3002;&#x5982;&#x679C;&#x8FD8;&#x8981;&#x63D0;&#x4EA4;&#xFF0C;&#x76F4;&#x63A5;commit&#x5373;&#x53EF;</p>
+<p>3&#xFF1A;<strong>git reset --hard&#xFF1A;</strong> &#x5F7B;&#x5E95;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x672C;&#x5730;&#x7684;&#x6E90;&#x7801;&#x4E5F;&#x4F1A;&#x53D8;&#x4E3A;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x5185;&#x5BB9;</p>
 </blockquote>
-<blockquote>
-<p>3&#xFF1A;<strong>git reset &#x2013;hard&#xFF1A;</strong> &#x5F7B;&#x5E95;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x672C;&#x5730;&#x7684;&#x6E90;&#x7801;&#x4E5F;&#x4F1A;&#x53D8;&#x4E3A;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x5185;&#x5BB9;</p>
-</blockquote>
-<pre data-role="codeBlock" data-info class="language-"><code>#&#x56DE;&#x9000;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C; 
-git reset HEAD^ 
-#&#x56DE;&#x9000;a.py&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x7248;&#x672C;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C; 
-git reset HEAD^ a.py 
-#&#x5411;&#x524D;&#x56DE;&#x9000;&#x5230;&#x7B2C;3&#x4E2A;&#x7248;&#x672C; 
-git reset &#x2013;soft HEAD~3 
-#&#x5C06;&#x672C;&#x5730;&#x7684;&#x72B6;&#x6001;&#x56DE;&#x9000;&#x5230;&#x548C;&#x8FDC;&#x7A0B;&#x7684;&#x4E00;&#x6837; 
-git reset &#x2013;hard origin/master 
-#&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C; 
-git reset 057d 
-#&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6309;&#x7167;&#x67D0;&#x4E00;&#x6B21;&#x7684;commit&#x5B8C;&#x5168;&#x53CD;&#x5411;&#x7684;&#x8FDB;&#x884C;&#x4E00;&#x6B21;commit 
-git revert HEAD 
-</code></pre><p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x67D0;&#x6B21;&#x4FEE;&#x6539;&#x4E86;&#x67D0;&#x4E9B;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;commit&#x5230;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#xFF0C;&#x800C;&#x4E14;&#x5DF2;&#x7ECF;push&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4E86;<br>
-&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x628A;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x90FD;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#x5462;&#xFF1F;<br>
-&#x524D;&#x9762;&#x8BB2;&#x5230;&#x7684;git reset&#x53EA;&#x662F;&#x5728;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4E2D;&#x56DE;&#x9000;&#x7248;&#x672C;&#xFF0C;&#x800C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x7248;&#x672C;&#x4E0D;&#x4F1A;&#x53D8;&#x5316;<br>
-&#x8FD9;&#x6837;&#xFF0C;&#x5373;&#x4F7F;&#x672C;&#x5730;reset&#x4E86;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x518D;git pull&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x5185;&#x5BB9;&#x53C8;&#x4F1A;&#x548C;&#x672C;&#x5730;&#x4E4B;&#x524D;&#x7248;&#x672C;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;merge<br>
-&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x6709;2&#x79CD;&#x529E;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;<br>
-1&#xFF1A;&#x76F4;&#x63A5;&#x5728;&#x8FDC;&#x7A0B;server&#x7684;&#x4ED3;&#x5E93;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6267;&#x884C;git reset &#x2013;soft 10efa&#x6765;&#x56DE;&#x9000;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x5728;&#x8FDC;&#x7A0B;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;mixed&#x6216;hard&#x53C2;&#x6570;<br>
-2&#xFF1A;&#x5728;&#x672C;&#x5730;&#x76F4;&#x63A5;&#x628A;&#x8FDC;&#x7A0B;&#x7684;master&#x5206;&#x652F;&#x7ED9;&#x5220;&#x9664;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x628A;reset&#x540E;&#x7684;&#x5206;&#x652F;&#x5185;&#x5BB9;&#x7ED9;push&#x4E0A;&#x53BB;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>#&#x65B0;&#x5EFA;old_master&#x5206;&#x652F;&#x505A;&#x5907;&#x4EFD;  
-git branch old_master  
-#push&#x5230;&#x8FDC;&#x7A0B;  
-git push origin old_master:old_master  
-#&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;  
-git reset &#x2013;hard bae168  
-#&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x7684;master&#x5206;&#x652F;  
-git push origin :master  
-#&#x91CD;&#x65B0;&#x521B;&#x5EFA;master&#x5206;&#x652F;  
-git push origin master  
-</code></pre><p>&#x5728;&#x5220;&#x9664;&#x8FDC;&#x7A0B;master&#x5206;&#x652F;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x89C1;&#x4E0B;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>$ git push origin :master  
-error: By default, deleting the current branch is denied, because the next  
-error: &apos;git clone&apos; won&apos;t result in any file checked out, causing confusion.  
-error:  
-error: You can set &apos;receive.denyDeleteCurrent&apos; configuration variable to  
-error: &apos;warn&apos; or &apos;ignore&apos; in the remote repository to allow deleting the  
-error: current branch, with or without a warning message.  
-error:  
-error: To squelch this message, you can set it to &apos;refuse&apos;.  
-error: refusing to delete the current branch: refs/heads/master  
-To git@xx.sohu.com:gitosis_test  
- ! [remote rejected] master (deletion of the current branch prohibited)  
-error: failed to push some refs to &apos;git@xx.sohu.com:gitosis_test&apos;
-</code></pre><p>&#x8FD9;&#x65F6;&#x9700;&#x8981;&#x5728;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BBE;&#x7F6E;git&#x7684;receive.denyDeleteCurrent&#x53C2;&#x6570;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>git receive.denyDeleteCurrent warn
-</code></pre><p>&#x7136;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x7684;master&#x5206;&#x652F;&#x4E86;<br>
-&#x867D;&#x7136;&#x8BF4;&#x6709;&#x4EE5;&#x4E0A;2&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x56DE;&#x9000;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4F46;&#x8FD9;2&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x90FD;&#x633A;&#x5371;&#x9669;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x8C28;&#x614E;&#x64CD;&#x4F5C;</p>
+<ul>
+<li>&#x56DE;&#x9000;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset HEAD^
+</code></pre><ul>
+<li>&#x56DE;&#x9000;a.py&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x7248;&#x672C;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset HEAD^ a.py 
+</code></pre><ul>
+<li>&#x5411;&#x524D;&#x56DE;&#x9000;&#x5230;&#x7B2C;3&#x4E2A;&#x7248;&#x672C;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset &#x2013;soft HEAD~3 
+</code></pre><ul>
+<li>&#x5C06;&#x672C;&#x5730;&#x7684;&#x72B6;&#x6001;&#x56DE;&#x9000;&#x5230;&#x548C;&#x8FDC;&#x7A0B;&#x7684;&#x4E00;&#x6837;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset &#x2013;hard origin/master 
+</code></pre><ul>
+<li>&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git reset 057d 
+</code></pre><p>-&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6309;&#x7167;&#x67D0;&#x4E00;&#x6B21;&#x7684;commit&#x5B8C;&#x5168;&#x53CD;&#x5411;&#x7684;&#x8FDB;&#x884C;&#x4E00;&#x6B21;commit</p>
+<pre data-role="codeBlock" data-info class="language-"><code>git revert HEAD 
+</code></pre><h3 class="mume-header" id="git%E6%AF%94%E8%BE%83%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E5%B7%AE%E5%BC%82">git&#x6BD4;&#x8F83;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x5DEE;&#x5F02;</h3>
+
+<ul>
+<li>&#x66F4;&#x65B0;&#x672C;&#x5730;&#x7684;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git fetch origin
+</code></pre><ul>
+<li>&#x672C;&#x5730;&#x4E0E;&#x8FDC;&#x7A0B;&#x7684;&#x5DEE;&#x96C6; :&#xFF08;&#x663E;&#x793A;&#x8FDC;&#x7A0B;&#x6709;&#x800C;&#x672C;&#x5730;&#x6CA1;&#x6709;&#x7684;commit&#x4FE1;&#x606F;&#xFF09;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log master..origin/master
+</code></pre><ul>
+<li>&#x7EDF;&#x8BA1;&#x6587;&#x4EF6;&#x7684;&#x6539;&#x52A8;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git diff &lt;local branch&gt; &lt;remote&gt;/&lt;remote branch&gt;
+</code></pre><h3 class="mume-header" id="git-%E5%AF%B9%E6%AF%94%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E5%B7%AE%E5%BC%82">git &#x5BF9;&#x6BD4;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x5DEE;&#x5F02;</h3>
+
+<p>&#x573A;&#x666F;&#x9700;&#x6C42;&#xFF1A;&#x5047;&#x8BBE;&#x6709; 2 &#x4E2A;&#x5206;&#x652F;&#xFF1A;master, dev&#xFF0C;&#x73B0;&#x5728;&#x60F3;&#x67E5;&#x770B;&#x8FD9;&#x4E24;&#x4E2A; branch &#x7684;&#x533A;&#x522B;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>&#x67E5;&#x770B; dev &#x6709;&#xFF0C;&#x800C; master &#x4E2D;&#x6CA1;&#x6709;&#x7684;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log dev ^master
+</code></pre><ul>
+<li>&#x67E5;&#x770B; dev &#x4E2D;&#x6BD4; master &#x4E2D;&#x591A;&#x63D0;&#x4EA4;&#x4E86;&#x54EA;&#x4E9B;&#x5185;&#x5BB9;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log master..dev
+</code></pre><ul>
+<li>&#x4E0D;&#x77E5;&#x9053;&#x8C01;&#x63D0;&#x4EA4;&#x7684;&#x591A;&#x8C01;&#x63D0;&#x4EA4;&#x7684;&#x5C11;&#xFF0C;&#x5355;&#x7EAF;&#x60F3;&#x77E5;&#x9053;&#x6709;&#x4EC0;&#x4E48;&#x4E0D;&#x4E00;&#x6837;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log dev...master
+</code></pre><ul>
+<li>&#x5728;&#x4E0A;&#x8FF0;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x518D;&#x663E;&#x793A;&#x51FA;&#x6BCF;&#x4E2A;&#x63D0;&#x4EA4;&#x662F;&#x5728;&#x54EA;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>git log --left-right dev...master
+</code></pre><p>&#x6CE8;&#x610F; commit &#x540E;&#x9762;&#x7684;&#x7BAD;&#x5934;&#xFF0C;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x5728; &#x2013;left-right dev&#x2026;master &#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5DE6;&#x7BAD;&#x5934; &lt; &#x8868;&#x793A;&#x662F; dev &#x7684;&#xFF0C;&#x53F3;&#x7BAD;&#x5934; &gt; &#x8868;&#x793A;&#x662F; master&#x7684;&#x3002;</p>
 <h3 class="mume-header" id="large-files">large files</h3>
 
 <p><a href="http://note.youdao.com/">Git Large File Storage</a></p>
-<h3 class="mume-header" id="issue">issue</h3>
+<h3 class="mume-header" id="issues">issues</h3>
 
 <h4 class="mume-header" id="fatal-remote-error-you-cant-push-to-gitgithubcomtest4581testgit-use-httpsgithubcomtest4581testgit">fatal: remote error: You can&apos;t push to git://github.com/test4581/test.git Use <a href="https://github.com/test4581/test.git">https://github.com/test4581/test.git</a></h4>
 
 <p>&#x5982;&#x679C;&#x5728;git clone&#x7684;&#x65F6;&#x5019;&#x7528;&#x7684;&#x662F;<code>git://github.com:xx/xxx.git</code>&#x7684;&#x5F62;&#x5F0F;, &#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;protocol&#x662F;&#x4E0D;&#x652F;&#x6301;push&#x7684;,&#x7528;<code>git clone git@github.com:xx/xxx.git</code>&#x5C31;&#x53EF;&#x4EE5;&#x7528;git push&#x4E86;&#x3002;</p>
+<h4 class="mume-header" id="merge-branch-master-of">Merge branch &apos;master&apos; of ...</h4>
+
+<p><span id="Merge_branch_master_of">anchor: Merge branch &apos;master&apos; of ...</span><br>
+<a href="https://www.cnblogs.com/Sinte-Beuve/p/9195018.html">Git push &#x65F6;&#x5982;&#x4F55;&#x907F;&#x514D;&#x51FA;&#x73B0; &quot;Merge branch &apos;master&apos; of ...&quot;</a></p>
 
       </div>
       
