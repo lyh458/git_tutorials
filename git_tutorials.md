@@ -1,6 +1,8 @@
 [TOC]
 # Github使用教程
-强烈推荐[Git Documentations](https://git-scm.com/book/zh/v2)
+强烈推荐
+- [高质量的Git中文教程](https://github.com/geeeeeeeeek/git-recipes/wiki)
+- [Git Documentations](https://git-scm.com/book/zh/v2)
 
 ## 基本指令
 ### 对现有的某个项目管理 ``git init``
@@ -36,6 +38,21 @@ git status
     nothing to commit (working directory clean)
 ```
 修改或者添加新文件后再用此命令会出现另外的显示。
+
+### 查看日志``git log``
+git log 命令可以显示所有提交过的版本信息
+- 推荐[Git log 高级用法](https://github.com/geeeeeeeeek/git-recipes/wiki/5.3-Git-log-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95)
+- ``git log --oneline``标记把每一个提交压缩到了一行中。它默认只显示提交ID和提交信息的第一行。
+
+- ``git reflog``查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
+
+- ``git log --graph``绘制一个ASCII图像来展示提交历史的分支结构。它经常和--oneline和--decorate两个选项一起使用，这样会更容易查看哪个提交属于哪个分支:
+```
+git log --graph --oneline --decorate
+```
+
+- 更多相关
+[git-log过滤merge信息](#git-log过滤merge信息)
 
 ### 分支管理 `` git branch``
 
@@ -137,7 +154,6 @@ git tag -l
 ```
 
 ### 暂存当前正在进行的工作 ``git stash``&``git stash pop``
-<span id = "git_stash">git stash anchor</span>
 [git stash的详细讲解](https://www.jianshu.com/p/14afc9916dcb)
 [git stash 用法总结和注意点](https://www.cnblogs.com/zndxall/archive/2018/09/04/9586088.html)
 
@@ -515,7 +531,7 @@ rebase与merge不同，rebase会将合入分支上超前的节点在待合入分
 简单来说：一旦你的commit已经推送到远程仓库，并且有其他人已经fork去使用，那么就不要对这些commit执行``git rebase``操作了。
 
 参考自[Git分支Rebase详解](https://blog.csdn.net/endlu/article/details/51605861)
-[git rebase成功后如何撤销](#git_rebase_withdraw)
+[git rebase成功后如何撤销](#git-rebase成功后如何撤销)
 
 #### 使用``git cherry-pick``
 
@@ -602,7 +618,7 @@ git rebase --continue
 - 最后强制push
 
 ### ``git rebase``成功后如何撤销
-<span id = "git_rebase_withdraw"> anchor: git rebase成功后如何撤销</span>
+
 参考自[git rebase 成功之后如何撤销](https://blog.csdn.net/chengde6896383/article/details/83418488)
 git rebase 过程中可以使用git --abort/--continue来进行操作，成功之后如何撤销呢？
 
@@ -623,11 +639,6 @@ git log --no-merges
 git log --merges |grep 'Merge branch'|wc -l
 ```
 
-- 查看本地记录
-```
-git reflog
-```
-
 ### 利用``git stash``暂存未commit的修改
 场景需求：当你的开发进行到一半，但是代码还不想进行提交，然后需要同步去关联远端代码时。如果你本地的代码和远端代码没有冲突时。可以直接通过git pull解决。但是如果可能发生冲突怎么办.直接git pull会拒绝覆盖当前的修改。
 
@@ -637,13 +648,13 @@ git stash
 git pull
 git stash pop
 ```
-``git stash``详细用法参见[git stash anchor](#git_stash)
+``git stash``详细用法参见[git stash](#暂存当前正在进行的工作-git-stashgit-stash-pop)
 
-当本地（已经commit）和远程仓库都做了不同修改，如何pull远程仓库的内容？参考[git pull --rebase](#git_pull_rebase)
+当本地（已经commit）和远程仓库都做了不同修改，如何pull远程仓库的内容？参考[git pull --rebase](#使用git-pull---rebase实现当本地已经commit和远程仓库都做了不同修改pull远程仓库的内容)
 
 ### 使用``git pull --rebase``实现当本地（已经commit）和远程仓库都做了不同修改，pull远程仓库的内容
-<span id = "git_pull_rebase"> anchor: git pull --rebase</span>
-场景需求：当本地（已经commit）和远程仓库都做了不同修改，此时如果想push本地的修改到远程仓库，会被rejected。此时可以先pull，然后便可以成功push。但是往往会出现[Merge branch 'master' of ...](#Merge_branch_master_of)的问题。解决方法：
+
+场景需求：当本地（已经commit）和远程仓库都做了不同修改，此时如果想push本地的修改到远程仓库，会被rejected。此时可以先pull，然后便可以成功push。但是往往会出现[Merge branch 'master' of ...](#merge-branch-master-of-)的问题。解决方法：
 ```
 git pull --rebase
 ```
@@ -818,5 +829,5 @@ git log --left-right dev...master
 如果在git clone的时候用的是``git://github.com:xx/xxx.git ``的形式, 那么就会出现这个问题，因为这个protocol是不支持push的,用``git clone git@github.com:xx/xxx.git``就可以用git push了。
 
 #### Merge branch 'master' of ...
-<span id = "Merge_branch_master_of">anchor: Merge branch 'master' of ...</span>
+
 [Git push 时如何避免出现 "Merge branch 'master' of ..."](https://www.cnblogs.com/Sinte-Beuve/p/9195018.html)
