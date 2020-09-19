@@ -384,7 +384,7 @@ git reset --hard <commit_id>
 git push origin HEAD --force
 ```
 
-### 只pull request部分commit(或者分支合并)
+### 只pull request部分commit(或者只合并部分commit到其他分支)
 pull request可以指定分支,你自己的代码可以创建一个分支(以dev分支为例),需要pull request的代码直接放到master分支或其他分支（以master分支为例）。有两种实现方法：
 
 #### 利用``git cherry-pick``实现
@@ -438,11 +438,14 @@ git cherry-pick A^..B
 就像这张图所描述的这样，将 develop 分支中的 C~E 部分复制到 master 分支中去,即我们需要将最后三个 commit，复制到 master 分支上去。。这时我们就可以用 git rebase 命令来实现了。
 ```
 // startpoint 第一个 commit id, endpoint 最后一个 commit id，branchName 就是目标分支了。
-$ git rebase [startpoint] [endpoint] --onto [branchName]
+$ git rebase <start_commitID> <end_commitID> --onto [branchName]
 ```
 
 执行 git rebase 命令之后，我们发现当前的 HEAD 处于游离状态。
 所以我们需要使用 git reset 命令，将 master 所指向的 commit id 设置为当前 HEAD 所指向的 commit id。
+```
+git reset --hard <end_commitID>
+```
 
 ### 合并分支
 场景需求：将test分支的新增内容合并到master分支(两个分支存在有交叉及无交叉两种情况)，可以使用四种方法实现：
