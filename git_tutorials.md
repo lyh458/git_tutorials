@@ -190,6 +190,46 @@ git stash --help   # for more info
 ```
 
 ## 针对各种场景需求的教程
+
+### 配置用户名及email
+
+- 配置用户名和密码，配置内容在~/.gitconfig文件中
+```
+git config --global user.name "<user_name>"
+git config --global user.email "<user_email>"
+```
+
+- 查看config
+```
+git config --list
+```
+
+### ``git clone``远程的所有分支
+
+`git clone``到本地后，即使远程仓库有多个分支，但是默认在本地都是隐藏的
+- 显示隐藏的分支
+   ```
+   git branch -a
+   ```
+
+- 快速切换到任意分支，如origin/dev
+   ```
+   git checkout origin/dev
+   ```
+
+- 如果想在隐藏的分支上工作，必须新建一个分支
+  ```
+  git checkout -b dev origin/dev
+  ```
+- 或者使用``-t``参数，它默认会在本地建立一个和远程分支名字一样的分支
+   ```
+   git checkout -t origin/dev
+   ```
+- 也可以使用fetch来做:
+   ```
+   git fetch origin dev:dev
+   ```
+
 ### 记录每次更新到仓库
 现在我们手上已经有了一个真实项目的Git仓库，并从这个仓库中取出了所有文件的工作拷贝。接下来，对这些文件作些修改，在完成了一个阶段的目标之后，提交本次更新到仓库。
 
