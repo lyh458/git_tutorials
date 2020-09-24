@@ -108,11 +108,22 @@ git remote add <name> <url>
 ### 选择部分commit ``git cherry-pick``
 [git cherry-pick 教程s](http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
 
-### 分支衍合 ``git rebase``
+### 分支变基/衍合 ``git rebase``
+
+rebase，从字面意思就可以看出是将某个分支的某部分commit变换基，实际也是如此。
+
 [Git分支rebase详解](https://blog.csdn.net/endlu/article/details/51605861)
 > 如果把衍合当成一种在推送之前清理提交历史的手段，而且仅仅衍合那些尚未公开的提交对象，就没问题。如果衍合那些已经公开的提交对象，并且已经有人基于这些提交对象开展了后续开发工作的话，就会出现叫人沮丧的麻烦。
 
 [彻底搞懂git rebase](https://www.jianshu.com/p/f080912c9cc5)
+
+变基使得提交历史更加整洁。 你在查看一个经过变基的分支的历史记录时会发现，尽管实际的开发工作是并行的， 但它们看上去就像是串行的一样，提交历史是一条直线没有分叉。
+
+一般我们这样做的目的是为了确保在向远程分支推送时能保持提交历史的整洁——例如向某个其他人维护的项目贡献代码时。 在这种情况下，你首先在自己的分支里进行开发，当开发完成时你需要先将你的代码变基到 origin/master 上，然后再向主项目提交修改。 这样的话，该项目的维护者就不再需要进行整合工作，只需要快进合并便可。
+如图将 C4 中的修改变基到 C3 上
+<!-- ![](https://i.imgur.com/kdlAKk9.png) -->
+![](https://i.imgur.com/kdlAKk9.png)
+然后回到master分支，进行一次fast-forward合并。
 
 ### 版本恢复命令 ``git reset``
 不小心git add了不希望add的文件，可以使用git reset撤回。具体见针对场景的教程
@@ -191,6 +202,7 @@ git stash --help   # for more info
 
 ## 针对各种场景需求的教程
 
+<<<<<<< HEAD
 ### 配置用户名及email
 
 - 配置用户名和密码，配置内容在~/.gitconfig文件中
@@ -229,6 +241,11 @@ git config --list
    ```
    git fetch origin dev:dev
    ```
+=======
+### 同时使用Gitee和Github
+
+- 参考[使用gitee](https://www.liaoxuefeng.com/wiki/896043488029600/1163625339727712)
+>>>>>>> Add tutorials to use gitee
 
 ### 记录每次更新到仓库
 现在我们手上已经有了一个真实项目的Git仓库，并从这个仓库中取出了所有文件的工作拷贝。接下来，对这些文件作些修改，在完成了一个阶段的目标之后，提交本次更新到仓库。
@@ -459,6 +476,11 @@ git push origin master
 - 然后在网页端提交PR
 
 上面的命令将 A 和 B 两个提交应用到当前分支。这会在当前分支生成两个对应的新提交。
+git cherry-pick前的commit ID
+![git cherry-pick前](https://i.imgur.com/Hgaf8yU.png)
+
+git cherry-pick后的commit ID
+![git cherry-pick后](https://i.imgur.com/g8h1rRf.png)
 如果想要转移一系列的连续提交，可以使用下面的简便语法。
 ```
 git cherry-pick A..B 
@@ -475,17 +497,26 @@ git cherry-pick A^..B
 在我们的实际开发的过程中，我们的项目中会存在多个分支。在某些情况下，可能需要将某一个分支上的 commit 复制到另一个分支上去。
 ![](https://i.imgur.com/CD1AnDx.png)
 
-就像这张图所描述的这样，将 develop 分支中的 C~E 部分复制到 master 分支中去,即我们需要将最后三个 commit，复制到 master 分支上去。。这时我们就可以用 git rebase 命令来实现了。
+就像这张图所描述的这样，将dev分支中的 C~E 部分复制到 master 分支中去,即我们需要将最后三个 commit，复制到 master 分支上去。。这时我们就可以用 git rebase 命令来实现了。（注：此处所举例子中，master与dev分支存在交叉）
+![git rebase前状态](https://i.imgur.com/hJcBh6z.png)
+- 切换到master分支
 ```
-// startpoint 第一个 commit id, endpoint 最后一个 commit id，branchName 就是目标分支了。
-$ git rebase <start_commitID> <end_commitID> --onto [branchName]
+git checkout master
 ```
 
-执行 git rebase 命令之后，我们发现当前的 HEAD 处于游离状态。
-所以我们需要使用 git reset 命令，将 master 所指向的 commit id 设置为当前 HEAD 所指向的 commit id。
+- 执行变基操作。startpoint 第一个 commit id, endpoint 最后一个 commit id，branchName 就是目标分支了（注意rebase --onto的机制是左开右闭）。
 ```
-git reset --hard <end_commitID>
+git rebase <start_commit_ID>^ <end_commit_ID> --onto [branchName]
 ```
+
+执行 git rebase 命令之后，我们发现当前的 HEAD 处于游离状态。当master与dev分支变基前存在交叉时，rebase后<start_commit_ID>至<end_commit_ID>都会发生改变；当两个分支不存在分叉时，rebase后<start_commit_ID>至<end_commit_ID>不会发生改变。所以我们需要使用 git reset 命令，将 master 所指向的 commit id 设置为当前 HEAD 所指向的 commit id（设为<new_end_commit_ID>）。同时
+![游离状态下新的commit ID](https://i.imgur.com/t9j4Tek.png)
+```
+git checkout master
+git reset --hard <new_end_commit_ID>
+```
+
+![操作完后，commit ID已改变](https://i.imgur.com/QYsi3UW.png)
 
 ### 合并分支
 场景需求：将test分支的新增内容合并到master分支(两个分支存在有交叉及无交叉两种情况)，可以使用四种方法实现：
@@ -526,7 +557,7 @@ squash和no-ff非常类似，区别只有一点不会保留对合入分支的引
 ![git merge --squash](https://i.imgur.com/N5hJmDb.png)
 
 ##### 使用``git rebase``
-在分支没有交叉时，采用``git rebase``的方式与采用``git merge``fast forward是完全一样的。
+在分支没有交叉时，采用``git rebase``的方式与采用``git merge``fast forward是完全一样的，超前节点的commit ID不会发生改变。
 
 #### 当两个分支存在交叉时
 
@@ -554,20 +585,26 @@ squash和no-ff非常类似，区别只有一点不会保留对合入分支的引
 
 ##### 使用``git rebase``
 
-rebase与merge不同，rebase会将合入分支上超前的节点在待合入分支上重新提交一遍（即假如当前位于dev分支，执行``git rebase master``后，会将dev分支上超前的节点，在master上重新提交一遍，同时dev HEAD的位置也会相应变化），如下图，B1 B2会变为B1’ B2’，看起来会变成线性历史。
+rebase与merge不同，rebase会将合入分支上超前的节点在待合入分支上重新提交一遍（即假如当前位于dev分支，执行``git rebase master``后，会将dev分支上超前的节点，在master上重新提交一遍，同时dev HEAD的位置及超前节点的commit ID也会相应变化，但是master HEAD不会发生改变），如下图，B1 B2会变为B1’ B2’，看起来会变成线性历史。
 ![rebase合并](https://i.imgur.com/kzKXrlt.png)
 
-``git rebase``前
-![git rebase前](https://i.imgur.com/vT7n5Tq.png)
+变基前：
+![git rebase前概念图](https://i.imgur.com/vT7n5Tq.png)
 
-``git rebase master``后
+![变基前master、dev分支](https://i.imgur.com/uXLTfYA.png)
+
+变基后：
 ![git rebase后](https://i.imgur.com/2jpczlL.png)
+
+![变基前dev分支](https://i.imgur.com/VtWoOgl.png)
+
 
 当分支存在交叉时，使用``git rebase``时也会大概率存在冲突，而且冲突即使在同一个文件中，也得一个一个解决。解决冲突步骤：
 - 修改冲突部分
 - ``git add/rm <conflicted_files>``
 - ``git rebase --continue``
 - 如果第三步无效可以执行``git rebase --skip``，或者撤销修改退出rebase回到原来状态``git rebase --abort``。
+
 
 #### ``git rebase``使用法则
 
@@ -833,6 +870,7 @@ git reset 057d
 ```
 git revert HEAD 
 ```
+
 ### git比较本地仓库和远程仓库的差异
 - 更新本地的远程分支
 ```
