@@ -689,21 +689,26 @@ git push --force
 #### 修改历史commit注释
 假设要修改倒数第三条commit的注释
 - 执行 git 命令, 修改近三次的信息
-```
-git rebase -i HEAD~3
-```
+   ```
+   git rebase -i HEAD~3
+   ```
+
+- 一种极端情况是想从当前分支的第一个提交开始rebase，可以使用以下命令：
+   ```
+   git rebase -i --root
+   ```
 
 - 将该条信息（因为与``git log``的排列相反，所以此时该条commit应该是位于第一位）前的``pick``改为``edit``或者``e``，保存退出。
 
 - 修改改条commit的注释,保存退出
-```
-git rebase --amend
-```
+   ```
+   git rebase --amend
+   ```
 
 - 执行继续
-```
-git rebase --continue
-```
+   ```
+   git rebase --continue
+   ```
 
 - 最后强制push
 
