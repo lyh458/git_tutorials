@@ -202,7 +202,6 @@ git stash --help   # for more info
 
 ## 针对各种场景需求的教程
 
-<<<<<<< HEAD
 ### 配置用户名及email
 
 - 配置用户名和密码，配置内容在~/.gitconfig文件中
@@ -214,6 +213,29 @@ git config --global user.email "<user_email>"
 - 查看config
 ```
 git config --list
+```
+
+### 避免``git push``每次都需要输入用户名和密码的问题
+每次提交都需要密码是因为采用的 https 方式提交代码，如果采用的是 ssh 方式只需要在版本库中添加用户的rsa的key就可以实现提交时无需输入用户名和密码。
+
+- 查看当前方式
+```
+git remote -v
+```
+
+- 移除旧的http的origin
+```
+git remote rm origin
+```
+
+- 添加新的ssh方式的origin
+```
+git remote add origin git@github.com:<user_name>/<repo_name>.git
+```
+
+- 改动完之后直接执行git push是无法推送代码的，需要设置一下上游要跟踪的分支，与此同时会自动执行一次git push命令，此时已经不用要求输入用户名及密码啦！
+```
+git push --set-upstream origin master
 ```
 
 ### ``git clone``远程的所有分支
@@ -241,11 +263,9 @@ git config --list
    ```
    git fetch origin dev:dev
    ```
-=======
 ### 同时使用Gitee和Github
 
 - 参考[使用gitee](https://www.liaoxuefeng.com/wiki/896043488029600/1163625339727712)
->>>>>>> Add tutorials to use gitee
 
 ### 记录每次更新到仓库
 现在我们手上已经有了一个真实项目的Git仓库，并从这个仓库中取出了所有文件的工作拷贝。接下来，对这些文件作些修改，在完成了一个阶段的目标之后，提交本次更新到仓库。
@@ -300,7 +320,7 @@ git add README.md
 git add .
 
 # 提交项目更新
-git commit -m "first commit"
+git commit -m "Initial commit"
 
 # 建立远程仓库
 git remote add origin git://github.com:dengzhaotai/vlc_play.git
