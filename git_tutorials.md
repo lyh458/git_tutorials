@@ -935,6 +935,17 @@ git log --left-right dev...master
 ```
 注意 commit 后面的箭头，根据我们在 –left-right dev…master 的顺序，左箭头 < 表示是 dev 的，右箭头 > 表示是 master的。
 
+### 文件并未修改，但是被标记为changed
+``git diff``显示**old mode 100644 new mode 100755**,即是文件权限发生了变化，关闭filemode检查即可。
+- 针对该repo:
+   ```
+   git config --add core.filemode false
+   ```
+- 全局关闭
+   ```
+   git config --global core.filemode false
+   ```
+   
 ### large files
 
 [Git Large File Storage](http://note.youdao.com/)
