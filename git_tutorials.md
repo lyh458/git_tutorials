@@ -301,7 +301,7 @@ Host github.com
   HostName github.com
   IdentityFile C:\\Users\\liyih\\.ssh\\id_rsa_github
   PreferredAuthentications publickey
-  User lyh458
+  User <user_name>
 ```
 - 测试
 ``` ssh
@@ -435,12 +435,12 @@ echo "# ConExt" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/lyh458/ConExt.git
+git remote add origin https://github.com/<user_name>/<>repo_name>.git
 git push -u origin master
 ```
 ### push现有的仓库到自己的github
 ```
-git remote add origin https://github.com/lyh458/ConExt.git
+git remote add origin https://github.com/<user_name>/<>repo_name>.git
 git push -u origin master
 ```
 
@@ -940,7 +940,7 @@ git log --left-right dev...master
 [Git Large File Storage](http://note.youdao.com/)
 
 ### issues
-#### fatal: remote error: You can't push to git://github.com/test4581/test.git Use https://github.com/test4581/test.git
+#### fatal: remote error: You can't push to git://github.com/<user_name>/<repo_name>.git Use https://github.com/<user_name>/<repo_name>.git
 
 如果在git clone的时候用的是``git://github.com:xx/xxx.git ``的形式, 那么就会出现这个问题，因为这个protocol是不支持push的,用``git clone git@github.com:xx/xxx.git``就可以用git push了。
 
