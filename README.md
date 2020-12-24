@@ -1,1 +1,1 @@
-This is a private git tutorials created by Yihui Li
+A simple but effective git tutorials.
