@@ -704,7 +704,7 @@ git push --force
 ### 修改commit注释
 
 #### 只修改上一次的commit注释
-使用``git commmit --amend``指令，然后直接编辑注释，然后保存，最后``git push -f``。
+使用``git commit --amend``指令，然后直接编辑注释，然后保存，最后``git push -f``。
 
 #### 修改历史commit注释
 假设要修改倒数第三条commit的注释
@@ -720,7 +720,7 @@ git push --force
 
 - 将该条信息（因为与``git log``的排列相反，所以此时该条commit应该是位于第一位）前的``pick``改为``edit``或者``e``，保存退出。
 
-- 修改改条commit的注释,保存退出
+- 修改该条commit的注释,保存退出
    ```
    git rebase --amend
    ```
@@ -824,6 +824,10 @@ git reset --hard HEAD^
 - 回退到任意版本
 ```
 git reset --hard <commitID>
+```
+#### 已使用``git commit``（commitID_A)，撤回到未commit状态（已修改,假设A的上一个commit的ID为commitID_B）
+```
+git reset <commitID_B>
 ```
 
 #### ``git clean``放弃新添加的文件或文件夹
