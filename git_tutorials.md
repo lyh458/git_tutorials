@@ -654,6 +654,20 @@ merge结果能够体现出时间线，但是rebase会打乱时间线；rebase看
 + 优点：得到更简洁的项目历史，去掉了merge commit
 - 缺点：如果合并出现代码问题不容易定位，因为re-write了history
 
+#### 从其他分支合并个别文件或文件夹
+
+例如，需要从将branch B中将folder_a下的file_a合并到branch A中：
+- 切换到branch A
+   ```
+   git checkout A
+   ```
+
+- 合并文件
+   ```
+   git checkout B folder_a/file_a
+   ```
+note：在使用git checkout某文件到当前分支时，会将当前分支的对应文件强行覆盖。
+
 ### 合并多个commit
 
 参考[(Git)合并多个commit](https://segmentfault.com/a/1190000007748862)
