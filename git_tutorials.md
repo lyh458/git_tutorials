@@ -109,6 +109,19 @@ git log --graph --oneline --decorate
 - 更多相关
 [git-log过滤merge信息](#git-log过滤merge信息)
 
+### 比较版本/文件差异``git diff``
+
+[git diff的最全最详细的4大主流用法](https://blog.csdn.net/wq6ylg08/article/details/88798254)
+
+git diff用来比较文件之间的不同，其基本用法如下：
+
+- ``git diff``：当工作区有改动，暂存区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，暂存区不为空，diff对比的是“工作区与暂存区的共同文件”。
+- ``git diff --cached``或``git diff --staged``：显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有不相同文件的增删改(``git diff --cached``和``git diff --staged``相同作用)
+- ``git diff HEAD``：显示工作目录(已track但未add文件)和暂存区(已add但未commit文件)与最后一次commit之间的的所有不相同文件的增删改。
+   - ``git diff HEAD~X``或``git diff HEAD^^^…(后面有X个^符号，X为正整数):可以查看最近一次提交的版本与往过去时间线前数X个的版本之间的所有同(3)中定义文件之间的增删改。
+- ``git diff <branch 1> <branch 2>``：比较两个分支上最后 commit 的内容的差别.
+   - ``git diff <branch 1> <branch 2> --stat`` 显示出所有有差异的文件(不详细,没有对比内容)。
+   - ``git diff <branch 1> <branch 2> <file>``显示指定文件的详细差异(对比内容)。
 ### 分支管理 `` git branch``
 
 >有这么一种情形：在你编写代码的时候，总有那么一份代码是你心里调试好的“完美”的、“没有污染”的。而后面你所做的工作都希望是在这份代码的基础上不断砌砖，这就相当于github上的**branch**的概念了。完美的部分可以叫做**主分支**，而后来的砌砖便可以叫做分支。

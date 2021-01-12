@@ -277,6 +277,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#%E4%BB%8E%E7%8E%B0%E6%9C%89%E4%BB%93%E5%BA%93%E5%85%8B%E9%9A%86git-clone">&#x4ECE;&#x73B0;&#x6709;&#x4ED3;&#x5E93;&#x514B;&#x9686;<code>git clone</code></a></li>
 <li><a href="#%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81-git-status">&#x68C0;&#x67E5;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x72B6;&#x6001; <code>git status</code></a></li>
 <li><a href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97git-log">&#x67E5;&#x770B;&#x65E5;&#x5FD7;<code>git log</code></a></li>
+<li><a href="#%E6%AF%94%E8%BE%83%E7%89%88%E6%9C%AC%E6%96%87%E4%BB%B6%E5%B7%AE%E5%BC%82git-diff">&#x6BD4;&#x8F83;&#x7248;&#x672C;/&#x6587;&#x4EF6;&#x5DEE;&#x5F02;<code>git diff</code></a></li>
 <li><a href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86-git-branch">&#x5206;&#x652F;&#x7BA1;&#x7406; <code>git branch</code></a></li>
 <li><a href="#%E6%B7%BB%E5%8A%A0%E4%B8%8A%E6%B8%B8%E4%BB%93%E5%BA%93-git-remote">&#x6DFB;&#x52A0;&#x4E0A;&#x6E38;&#x4ED3;&#x5E93; <code>git remote</code></a></li>
 <li><a href="#%E9%80%89%E6%8B%A9%E9%83%A8%E5%88%86commit-git-cherry-pick">&#x9009;&#x62E9;&#x90E8;&#x5206;commit <code>git cherry-pick</code></a></li>
@@ -498,6 +499,25 @@ git commit -m &apos;initial project version&apos;
 </code></pre><ul>
 <li>&#x66F4;&#x591A;&#x76F8;&#x5173;<br>
 <a href="#git-log%E8%BF%87%E6%BB%A4merge%E4%BF%A1%E6%81%AF">git-log&#x8FC7;&#x6EE4;merge&#x4FE1;&#x606F;</a></li>
+</ul>
+<h3 class="mume-header" id="%E6%AF%94%E8%BE%83%E7%89%88%E6%9C%AC%E6%96%87%E4%BB%B6%E5%B7%AE%E5%BC%82git-diff">&#x6BD4;&#x8F83;&#x7248;&#x672C;/&#x6587;&#x4EF6;&#x5DEE;&#x5F02;<code>git diff</code></h3>
+
+<p><a href="https://blog.csdn.net/wq6ylg08/article/details/88798254">git diff&#x7684;&#x6700;&#x5168;&#x6700;&#x8BE6;&#x7EC6;&#x7684;4&#x5927;&#x4E3B;&#x6D41;&#x7528;&#x6CD5;</a></p>
+<p>git diff&#x7528;&#x6765;&#x6BD4;&#x8F83;&#x6587;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x5176;&#x57FA;&#x672C;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><code>git diff</code>&#xFF1A;&#x5F53;&#x5DE5;&#x4F5C;&#x533A;&#x6709;&#x6539;&#x52A8;&#xFF0C;&#x6682;&#x5B58;&#x533A;&#x4E3A;&#x7A7A;&#xFF0C;diff&#x7684;&#x5BF9;&#x6BD4;&#x662F;&#x201C;&#x5DE5;&#x4F5C;&#x533A;&#x4E0E;&#x6700;&#x540E;&#x4E00;&#x6B21;commit&#x63D0;&#x4EA4;&#x7684;&#x4ED3;&#x5E93;&#x7684;&#x5171;&#x540C;&#x6587;&#x4EF6;&#x201D;&#xFF1B;&#x5F53;&#x5DE5;&#x4F5C;&#x533A;&#x6709;&#x6539;&#x52A8;&#xFF0C;&#x6682;&#x5B58;&#x533A;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;diff&#x5BF9;&#x6BD4;&#x7684;&#x662F;&#x201C;&#x5DE5;&#x4F5C;&#x533A;&#x4E0E;&#x6682;&#x5B58;&#x533A;&#x7684;&#x5171;&#x540C;&#x6587;&#x4EF6;&#x201D;&#x3002;</li>
+<li><code>git diff --cached</code>&#x6216;<code>git diff --staged</code>&#xFF1A;&#x663E;&#x793A;&#x6682;&#x5B58;&#x533A;(&#x5DF2;add&#x4F46;&#x672A;commit&#x6587;&#x4EF6;)&#x548C;&#x6700;&#x540E;&#x4E00;&#x6B21;commit(HEAD)&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x4E0D;&#x76F8;&#x540C;&#x6587;&#x4EF6;&#x7684;&#x589E;&#x5220;&#x6539;(<code>git diff --cached</code>&#x548C;<code>git diff --staged</code>&#x76F8;&#x540C;&#x4F5C;&#x7528;)</li>
+<li><code>git diff HEAD</code>&#xFF1A;&#x663E;&#x793A;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;(&#x5DF2;track&#x4F46;&#x672A;add&#x6587;&#x4EF6;)&#x548C;&#x6682;&#x5B58;&#x533A;(&#x5DF2;add&#x4F46;&#x672A;commit&#x6587;&#x4EF6;)&#x4E0E;&#x6700;&#x540E;&#x4E00;&#x6B21;commit&#x4E4B;&#x95F4;&#x7684;&#x7684;&#x6240;&#x6709;&#x4E0D;&#x76F8;&#x540C;&#x6587;&#x4EF6;&#x7684;&#x589E;&#x5220;&#x6539;&#x3002;
+<ul>
+<li><code>git diff HEAD~X</code>&#x6216;``git diff HEAD^^<sup>&#x2026;(&#x540E;&#x9762;&#x6709;X&#x4E2A;</sup>&#x7B26;&#x53F7;&#xFF0C;X&#x4E3A;&#x6B63;&#x6574;&#x6570;):&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x7248;&#x672C;&#x4E0E;&#x5F80;&#x8FC7;&#x53BB;&#x65F6;&#x95F4;&#x7EBF;&#x524D;&#x6570;X&#x4E2A;&#x7684;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x540C;(3)&#x4E2D;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x589E;&#x5220;&#x6539;&#x3002;</li>
+</ul>
+</li>
+<li><code>git diff &lt;branch 1&gt; &lt;branch 2&gt;</code>&#xFF1A;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x6700;&#x540E; commit &#x7684;&#x5185;&#x5BB9;&#x7684;&#x5DEE;&#x522B;.
+<ul>
+<li><code>git diff &lt;branch 1&gt; &lt;branch 2&gt; --stat</code> &#x663E;&#x793A;&#x51FA;&#x6240;&#x6709;&#x6709;&#x5DEE;&#x5F02;&#x7684;&#x6587;&#x4EF6;(&#x4E0D;&#x8BE6;&#x7EC6;,&#x6CA1;&#x6709;&#x5BF9;&#x6BD4;&#x5185;&#x5BB9;)&#x3002;</li>
+<li><code>git diff &lt;branch 1&gt; &lt;branch 2&gt; &lt;file&gt;</code>&#x663E;&#x793A;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x5DEE;&#x5F02;(&#x5BF9;&#x6BD4;&#x5185;&#x5BB9;)&#x3002;</li>
+</ul>
+</li>
 </ul>
 <h3 class="mume-header" id="%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86-git-branch">&#x5206;&#x652F;&#x7BA1;&#x7406; <code>git branch</code></h3>
 
