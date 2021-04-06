@@ -512,6 +512,10 @@ git remote add origin https://github.com/<user_name>/<>repo_name>.git
 git push -u origin master
 ```
 
+### 修改他人贡献的 Pull Request
+
+- [优雅地修改他人贡献的 Pull Request](https://liuyib.github.io/2020/09/19/add-commits-to-others-pr/)
+
 ### 如何删除已经提交到远程仓库的commit
 
 - 查看Git提交记录
@@ -907,7 +911,7 @@ git reset --hard HEAD^
 ```
 git reset --hard <commitID>
 ```
-#### 已使用``git commit``（commitID_A)，撤回到未commit状态（已修改,假设A的上一个commit的ID为commitID_B）
+#### 已使用``git commit``（commitID_A)，撤回到未commit状态（已修改，假设A的上一个commit的ID为commitID_B）
 ```
 git reset <commitID_B>
 ```
@@ -1023,6 +1027,7 @@ git log --left-right dev...master
 
 ### 查看最近或某一次提交修改的文件列表
 
+- [git 查看最近或某一次提交修改的文件列表](https://www.phpernote.com/linux/1362.html)
 - ``git log --name-status`` 每次修改的文件列表, 显示状态
 - ``git log --name-only`` 每次修改的文件列表
 - ``git log --stat`` 每次修改的文件列表, 及文件修改的统计
