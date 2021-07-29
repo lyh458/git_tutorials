@@ -1,5 +1,7 @@
 [TOC]
 
+---
+
 # Github使用教程
 
 强烈推荐
@@ -78,7 +80,7 @@ git init
 
 初始化后，在当前目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。不过目前，仅仅是按照既有的结构框架初始化好了里边所有的文件和目录，但我们还没有开始跟踪管理项目中的任何一个文件。
 
-如果当前目录下有几个文件想要纳入版本控制，需要先用 ```git add``` 命令告诉 Git 开始对这些文件进行跟踪，然后提交：
+如果当前目录下有几个文件想要纳入版本控制，需要先用`git add`命令告诉 Git 开始对这些文件进行跟踪，然后提交：
 
 ```git
 git add *.c
@@ -88,8 +90,8 @@ git commit -m 'initial project version'
 
 ### 从现有仓库克隆``git clone``
 
-如果想对某个开源项目出一份力，可以先把该项目的 Git 仓库复制一份出来，这就需要用到```git clone```命令。如果你熟悉其他的 VCS 比如 Subversion，你可能已经注意到这里使用的是 clone 而不是```git checkout```。这是个非常重要的差别，Git收取的是项目历史的所有数据（每一个文件的每一个版本），服务器上有的数据克隆之后本地也都有了。实际上，即便服务器的磁盘发生故障，用任何一个克隆出来的客户端都可以重建服务器上的仓库，回到当初克隆时的状态（虽然可能会丢失某些服务器端的挂钩设置，但所有版本的数据仍旧还在）。
-克隆仓库的命令格式为 ```git clone [url]```。比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：
+如果想对某个开源项目出一份力，可以先把该项目的 Git 仓库复制一份出来，这就需要用到`git clone`命令。如果你熟悉其他的 VCS 比如 Subversion，你可能已经注意到这里使用的是 clone 而不是`git checkout`。这是个非常重要的差别，Git收取的是项目历史的所有数据（每一个文件的每一个版本），服务器上有的数据克隆之后本地也都有了。实际上，即便服务器的磁盘发生故障，用任何一个克隆出来的客户端都可以重建服务器上的仓库，回到当初克隆时的状态（虽然可能会丢失某些服务器端的挂钩设置，但所有版本的数据仍旧还在）。
+克隆仓库的命令格式为`git clone [url]`。比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：
 
 ```git
 git clone git://github.com/schacon/grit.git
@@ -103,9 +105,9 @@ git clone git://github.com/schacon/grit.git mygrit
 
 唯一的差别就是，现在新建的目录成了 **mygrit**，其他的都和上边的一样
 
-### 检查当前项目文件状态 ```git status```
+### 检查当前项目文件状态`git status`
 
-要确定哪些文件当前处于什么状态，可以用 ```git status``` 命令。如果在克隆仓库之后立即执行此命令，会看到类似这样的输出：
+要确定哪些文件当前处于什么状态，可以用`git status` 命令。如果在克隆仓库之后立即执行此命令，会看到类似这样的输出：
 
 ```git
 git status 
@@ -324,6 +326,14 @@ git stash --help   # for more info
 ```
 
 ## 针对各种场景需求的教程
+
+### git使用的各种规范行为及指南
+
+- [Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+
+- [Git：Commit Message 规范和代码格式校验](https://blog.csdn.net/qq_28387069/article/details/84025476)
+
+- [[Git]-- 团队合作中常见的缩写](https://blog.csdn.net/high2011/article/details/84315182)
 
 ### 配置用户名及email
 
@@ -618,10 +628,6 @@ git push -u origin master
 git remote add origin https://github.com/<user_name>/<>repo_name>.git
 git push -u origin master
 ```
-
-### 修改他人贡献的 Pull Request
-
-- [优雅地修改他人贡献的 Pull Request](https://liuyib.github.io/2020/09/19/add-commits-to-others-pr/)
 
 ### 如何删除已经提交到远程仓库的commit
 
@@ -918,7 +924,7 @@ Git会压缩提交历史，如果有冲突，需要修改，修改的时候要�
 ```git
 git add <conflict_files>
 git rebase --continue
- ```
+```
 
 - 推送覆盖远程仓库
 
@@ -928,6 +934,8 @@ git push --force
 
 - 如果希望合并不相邻的commit，可以使用``git rebase -i <commit ID>``先调整顺序，再按照上面的方法合并。参见[Git调整commit之间顺序](#调整commit顺序)
 
+---
+
 ### 调整commit顺序
 
 - 参见[Git调整commit之间顺序](https://www.softwhy.com/article-8639-1.html)
@@ -936,6 +944,8 @@ git push --force
 
 - 使用``git rebase -i 3a4226b``调出调整界面
 - 然后直接调整顺序，最后保存即可。
+
+---
 
 ### 修改commit注释
 
@@ -975,6 +985,36 @@ git rebase --continue
 
 - 最后强制push
 
+---
+
+### 优雅地修改他人贡献的PR
+
+即是他人提交了PR，作为repo的维护者如何对这个PR进行修改。
+
+- [优雅地修改他人贡献的 Pull Request](https://liuyib.github.io/2020/09/19/add-commits-to-others-pr/)
+
+---
+
+### 拉取上游仓库尚未合并的PR
+
+有一个常见场景，假如其他人向upstream上游仓库提交了一个PR，但是仓库的管理人员一直没有merge，作为吃瓜群众的我们正好又需要这个功能，那么该怎么办呢？执行一下命令即可：
+
+```git
+git fetch <upstream_name> pull/<PR_ID>/head:<branch_name>
+```
+
+- ``upstream_name``：上游仓库名称，例如**upstream**
+- ``PR_ID``：需要拉取下来的PR的ID
+- ``branch_name``：你希望拉取到的branch名称
+
+例如：将``upstream``上的`PR #11`拉取到本地的``dev``分支
+
+```git
+git fetch upstream pull/11/head:dev
+```
+
+参考自：[Checking out pull requests locally](https://docs.github.com/en/github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally)
+
 ### ``git rebase``成功后如何撤销
 
 参考自[git rebase 成功之后如何撤销](https://blog.csdn.net/chengde6896383/article/details/83418488)
@@ -983,6 +1023,8 @@ git rebase 过程中可以使用git --abort/--continue来进行操作，成功�
 - 首先执行``git reflog``查看本地记录，找到rebase前的commit ID
 
 - 然后执行``git reset --hard <commit ID>
+
+---
 
 ### ``git log``过滤Merge信息
 
@@ -1001,6 +1043,8 @@ git log --no-merges
 git log --merges |grep 'Merge branch'|wc -l
 ```
 
+---
+
 ### 利用``git stash``暂存未commit的修改
 
 场景需求：当你的开发进行到一半，但是代码还不想进行提交，然后需要同步去关联远端代码时。如果你本地的代码和远端代码没有冲突时。可以直接通过git pull解决。但是如果可能发生冲突怎么办.直接git pull会拒绝覆盖当前的修改。
@@ -1017,6 +1061,8 @@ git stash pop
 
 当本地（已经commit）和远程仓库都做了不同修改，如何pull远程仓库的内容？参考[git pull --rebase](#使用git-pull---rebase实现当本地已经commit和远程仓库都做了不同修改pull远程仓库的内容)
 
+---
+
 ### 使用``git pull --rebase``实现当本地（已经commit）和远程仓库都做了不同修改，pull远程仓库的内容
 
 场景需求：当本地（已经commit）和远程仓库都做了不同修改，此时如果想push本地的修改到远程仓库，会被rejected。此时可以先pull，然后便可以成功push。但是往往会出现[Merge branch 'master' of ...](#merge-branch-master-of-)的问题。解决方法：
@@ -1028,6 +1074,8 @@ git pull --rebase
 如果pull不产生冲突，会直接rebase，不会产生分支合并操作；如果有冲突则需要手动fix后，自行合并。参考[Git push 时如何避免出现 "Merge branch 'master' of ..."](https://www.cnblogs.com/Sinte-Beuve/p/9195018.html)
 
 - [git log高阶用法](https://www.jianshu.com/p/73f13d2725a8)
+
+---
 
 ### 版本恢复的各种场景
 
