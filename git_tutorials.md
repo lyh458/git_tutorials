@@ -58,7 +58,7 @@ GIT不关心文件两个版本之间的具体差别，而是关心文件的整�
 
 下面的图很好的解释了这四种状态的转变：
 
-![](https://cdn.jsdelivr.net/gh/lyh458/ImageRepo@main/1610442943249-1610442943230.png)
+![git文件四种状态](https://cdn.jsdelivr.net/gh/lyh458/ImageRepo@main/1610442943249-1610442943230.png)
 
 - 新建文件--->Untracked
 
@@ -380,7 +380,7 @@ git push --set-upstream origin master
 
 ### ``git clone``远程的所有分支
 
-`git clone``到本地后，即使远程仓库有多个分支，但是默认在本地都是隐藏的
+`git clone`到本地后，即使远程仓库有多个分支，但是默认在本地都是隐藏的
 
 - 显示隐藏的分支
 
@@ -713,7 +713,7 @@ git cherry-pick A^..B
 
 参考自[巧用 git rebase 将某一部分 commit 复制到另一个分支](https://www.cnblogs.com/yxhblogs/p/10561879.html)
 在我们的实际开发的过程中，我们的项目中会存在多个分支。在某些情况下，可能需要将某一个分支上的 commit 复制到另一个分支上去。
-![](https://i.imgur.com/CD1AnDx.png)
+![git rebase](https://i.imgur.com/CD1AnDx.png)
 
 就像这张图所描述的这样，将dev分支中的 C~E 部分复制到 master 分支中去,即我们需要将最后三个 commit，复制到 master 分支上去。。这时我们就可以用 git rebase 命令来实现了。（注：此处所举例子中，master与dev分支存在交叉）
 ![git rebase前状态](https://i.imgur.com/hJcBh6z.png)
@@ -1320,6 +1320,12 @@ git config --global core.filemode false
 [Git Large File Storage](http://note.youdao.com/)
 
 [git lfs安装及使用方法](https://www.jianshu.com/p/2439ba164440)
+
+### 其它指令
+
+#### `git clone --recursive`循环克隆git子项目
+
+就是项目里包含的一些库或者一些模块是存在了别的仓库，可以用递归来克隆回来。一次性就能解决所有的依赖模
 
 ### issues
 
